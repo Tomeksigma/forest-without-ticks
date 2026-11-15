@@ -3,6 +3,22 @@ import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 import { brokeredPreviewStorage } from './previewAuthStorage';
 
+// Polyfill minimal WebSocket for Node SSR environments (<22 or serverless) so RealtimeClient never throws
+class DummyWebSocket {
+  static readonly CONNECTING = 0;
+  static readonly OPEN = 1;
+  static readonly CLOSING = 2;
+  static readonly CLOSED = 3;
+  addEventListener() {}
+  removeEventListener() {}
+  send() {}
+  close() {}
+}
+
+if (typeof globalThis !== 'undefined' && typeof (globalThis as any).WebSocket === 'undefined') {
+  (globalThis as any).WebSocket = DummyWebSocket;
+}
+
 function isNewSupabaseApiKey(value: string): boolean {
   return value.startsWith('sb_publishable_') || value.startsWith('sb_secret_');
 }
@@ -70,6 +86,9 @@ function createSupabaseClient() {
       storage: brokeredPreviewStorage(),
       persistSession: true,
       autoRefreshToken: true,
+    },
+    realtime: {
+      transport: (typeof WebSocket !== 'undefined' ? WebSocket : DummyWebSocket) as any,
     },
   });
 }
