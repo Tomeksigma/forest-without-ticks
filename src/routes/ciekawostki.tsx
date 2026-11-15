@@ -10,7 +10,7 @@ export const Route = createFileRoute("/ciekawostki")({
     try {
       const res = await getFactsData();
       return {
-        facts: res?.facts?.length ? res.facts : fallbackFacts,
+        facts: (res?.facts?.length ? res.facts : fallbackFacts) as Fact[],
         miniQuiz: res?.miniQuiz?.length ? res.miniQuiz : fallbackMiniQuiz,
       };
     } catch {
@@ -191,8 +191,10 @@ function Ciekawostki() {
     setChoices((c) => ({ ...c, [id]: i }));
     setDiscovered((d) => (d.includes(id) ? d : [...d, id]));
     setGuessOpen(null);
-    const f = facts.find((x) => x.id === id)!;
-    if (i === f.guess.correct) setScored((s) => (s.includes(id) ? s : [...s, id]));
+    const f = facts.find((x) => x.id === id);
+    if (f && f.guess && i === f.guess.correct) {
+      setScored((s) => (s.includes(id) ? s : [...s, id]));
+    }
   };
   const randomFact = () => {
     const pool = facts.filter((f) => !discovered.includes(f.id));

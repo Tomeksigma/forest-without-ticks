@@ -174,11 +174,11 @@ function Checklist({ groups }: { groups: { title: string; items: string[] }[] })
   );
 }
 
-function KeyQuestion({ m, done }: { m: Module; done: boolean }) {
+function KeyQuestion({ m, done }: { m: any; done: boolean }) {
   const k = keyQuestion(m);
   const [pick, setPick] = useState<number | null>(null);
   const ok = pick === k.answer;
-  const next = modules.find((x) => x.n === m.n + 1);
+  const next = fallbackModules.find((x) => x.n === m.n + 1);
   const solved = done || ok;
   return (
     <section>

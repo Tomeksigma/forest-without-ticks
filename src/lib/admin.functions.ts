@@ -284,8 +284,24 @@ export const getFactsData = createServerFn({ method: "GET" })
         .eq("scope", "mini")
         .order("sort_order", { ascending: true });
 
+      const mappedFacts = dbFacts && dbFacts.length > 0
+        ? dbFacts.map((f: any) => ({
+            id: f.id,
+            category: f.category as "biologia" | "srodowisko" | "medyczne",
+            question: f.question,
+            answer: f.answer,
+            explanation: f.explanation,
+            meaning: f.meaning,
+            sourceName: f.source_name || f.sourceName || "",
+            sourceUrl: f.source_url || f.sourceUrl || "",
+            guess: (f.guess && typeof f.guess === "object" && "options" in f.guess)
+              ? (f.guess as { options: string[]; correct: number })
+              : { options: [], correct: 0 },
+          }))
+        : fallbackFacts;
+
       return {
-        facts: dbFacts && dbFacts.length > 0 ? dbFacts : fallbackFacts,
+        facts: mappedFacts,
         miniQuiz: dbMiniQuiz && dbMiniQuiz.length > 0
           ? dbMiniQuiz.map((q) => ({
               question: q.q,
