@@ -7,6 +7,13 @@
   NODE_VERSION = "20"
   NITRO_PRESET = "netlify"
 
+# Proxy Lovable Assets (e.g. videos and external assets) to Lovable CDN
+[[redirects]]
+  from = "/__l5e/assets-v1/*"
+  to = "https://5471dd47-db5b-5dc1-8fce-ce5dc895cd5a.lovableproject.com/__l5e/assets-v1/:splat"
+  status = 200
+  force = false
+
 # Redirect all requests to Nitro's server handler on Netlify
 [[redirects]]
   from = "/*"

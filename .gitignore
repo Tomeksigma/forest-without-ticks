@@ -16,8 +16,8 @@ dist-ssr
 .nitro
 *.local
 
-# Local Lovable asset files (served by Vite dev server, NOT committed — use Lovable Assets panel for deployment)
-public/__l5e/
+# Exclude heavy video binaries from git (served via Lovable CDN proxy redirect in netlify.toml)
+public/__l5e/**/*.mp4
 
 # Wrangler / Cloudflare
 .wrangler/
