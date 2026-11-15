@@ -35,8 +35,14 @@ function createSupabaseFetch(supabaseKey: string): typeof fetch {
       new Headers(init.headers).forEach((value, key) => headers.set(key, value));
     }
 
-    // New Supabase API keys are opaque strings, not bearer JWTs.
-    if (isNewSupabaseApiKey(supabaseKey) && headers.get('Authorization') === `Bearer ${supabaseKey}`) {
+    const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
+    const isStorage = url.includes('/storage/v1/');
+
+    // Supabase Storage API strictly requires the Authorization header
+    if (isStorage) {
+      headers.set('Authorization', `Bearer ${supabaseKey}`);
+    } else if (isNewSupabaseApiKey(supabaseKey) && headers.get('Authorization') === `Bearer ${supabaseKey}`) {
+      // New Supabase API keys for PostgREST are opaque strings, not bearer JWTs.
       headers.delete('Authorization');
     }
 
