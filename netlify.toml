@@ -7,6 +7,10 @@
   NODE_VERSION = "22"
   AWS_LAMBDA_JS_RUNTIME = "nodejs22.x"
   NITRO_PRESET = "netlify"
+  SUPABASE_URL = "https://adyhoqvmkrinjsyczmuc.supabase.co"
+  SUPABASE_PROJECT_ID = "adyhoqvmkrinjsyczmuc"
+  VITE_SUPABASE_URL = "https://adyhoqvmkrinjsyczmuc.supabase.co"
+  VITE_SUPABASE_PROJECT_ID = "adyhoqvmkrinjsyczmuc"
 
 # Proxy Lovable Assets (e.g. videos and external assets) to Lovable CDN
 [[redirects]]
