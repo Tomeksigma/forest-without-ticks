@@ -12,7 +12,7 @@ function verifyAdmin(password: string): boolean {
 
 /** Check admin password */
 export const checkAdminPassword = createServerFn({ method: "POST" })
-  .inputValidator((d: { password: string }) => ({ password: String(d?.password ?? "").slice(0, 200) }))
+  .validator((d: { password: string }) => ({ password: String(d?.password ?? "").slice(0, 200) }))
   .handler(async ({ data }) => {
     return { ok: verifyAdmin(data.password) };
   });
@@ -42,7 +42,7 @@ export const getSiteTexts = createServerFn({ method: "GET" })
 
 /** Save a site text blob */
 export const saveSiteText = createServerFn({ method: "POST" })
-  .inputValidator((d: { key: string; value: string; adminPassword: string }) => d)
+  .validator((d: { key: string; value: string; adminPassword: string }) => d)
   .handler(async ({ data }) => {
     if (!verifyAdmin(data.adminPassword)) {
       throw new Error("Unauthorized");
@@ -143,7 +143,7 @@ export const getModulesData = createServerFn({ method: "GET" })
 
 /** Save a lesson (create or update) */
 export const saveLesson = createServerFn({ method: "POST" })
-  .inputValidator((d: {
+  .validator((d: {
     id?: number;
     moduleId: number;
     title: string;
@@ -182,7 +182,7 @@ export const saveLesson = createServerFn({ method: "POST" })
 
 /** Delete a lesson */
 export const deleteLesson = createServerFn({ method: "POST" })
-  .inputValidator((d: { id: number; adminPassword: string }) => d)
+  .validator((d: { id: number; adminPassword: string }) => d)
   .handler(async ({ data }) => {
     if (!verifyAdmin(data.adminPassword)) throw new Error("Unauthorized");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
@@ -193,7 +193,7 @@ export const deleteLesson = createServerFn({ method: "POST" })
 
 /** Save a module */
 export const saveModule = createServerFn({ method: "POST" })
-  .inputValidator((d: {
+  .validator((d: {
     id: number;
     title: string;
     lead: string;
@@ -216,7 +216,7 @@ export const saveModule = createServerFn({ method: "POST" })
 
 /** Save a quiz question */
 export const saveQuizQuestion = createServerFn({ method: "POST" })
-  .inputValidator((d: {
+  .validator((d: {
     id?: number;
     scope: string;
     q: string;
@@ -259,7 +259,7 @@ export const saveQuizQuestion = createServerFn({ method: "POST" })
 
 /** Delete a quiz question */
 export const deleteQuizQuestion = createServerFn({ method: "POST" })
-  .inputValidator((d: { id: number; adminPassword: string }) => d)
+  .validator((d: { id: number; adminPassword: string }) => d)
   .handler(async ({ data }) => {
     if (!verifyAdmin(data.adminPassword)) throw new Error("Unauthorized");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
@@ -319,7 +319,7 @@ export const getFactsData = createServerFn({ method: "GET" })
 
 /** Save a fact */
 export const saveFact = createServerFn({ method: "POST" })
-  .inputValidator((d: {
+  .validator((d: {
     id?: number;
     category: string;
     question: string;
@@ -361,7 +361,7 @@ export const saveFact = createServerFn({ method: "POST" })
 
 /** Delete a fact */
 export const deleteFact = createServerFn({ method: "POST" })
-  .inputValidator((d: { id: number; adminPassword: string }) => d)
+  .validator((d: { id: number; adminPassword: string }) => d)
   .handler(async ({ data }) => {
     if (!verifyAdmin(data.adminPassword)) throw new Error("Unauthorized");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
@@ -399,7 +399,7 @@ export const getSimulatorData = createServerFn({ method: "GET" })
 
 /** Save a simulator scenario */
 export const saveSimulatorScenario = createServerFn({ method: "POST" })
-  .inputValidator((d: {
+  .validator((d: {
     id?: number;
     stage: string;
     situation: string;
@@ -431,7 +431,7 @@ export const saveSimulatorScenario = createServerFn({ method: "POST" })
 
 /** Delete a simulator scenario */
 export const deleteSimulatorScenario = createServerFn({ method: "POST" })
-  .inputValidator((d: { id: number; adminPassword: string }) => d)
+  .validator((d: { id: number; adminPassword: string }) => d)
   .handler(async ({ data }) => {
     if (!verifyAdmin(data.adminPassword)) throw new Error("Unauthorized");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
@@ -442,7 +442,7 @@ export const deleteSimulatorScenario = createServerFn({ method: "POST" })
 
 /** Upload an image file directly to Supabase Storage `site-assets` bucket */
 export const uploadImageToStorage = createServerFn({ method: "POST" })
-  .inputValidator((d: {
+  .validator((d: {
     base64: string;
     filename: string;
     contentType: string;
@@ -503,7 +503,7 @@ export const getGalleryPhotos = createServerFn({ method: "GET" })
 
 /** Save or update a gallery photo */
 export const saveGalleryPhoto = createServerFn({ method: "POST" })
-  .inputValidator((d: {
+  .validator((d: {
     id?: number;
     storagePath: string;
     caption?: string;
@@ -538,7 +538,7 @@ export const saveGalleryPhoto = createServerFn({ method: "POST" })
 
 /** Delete a gallery photo */
 export const deleteGalleryPhoto = createServerFn({ method: "POST" })
-  .inputValidator((d: { id: number; adminPassword: string }) => d)
+  .validator((d: { id: number; adminPassword: string }) => d)
   .handler(async ({ data }) => {
     if (!verifyAdmin(data.adminPassword)) throw new Error("Unauthorized");
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");

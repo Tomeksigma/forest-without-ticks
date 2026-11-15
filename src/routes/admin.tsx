@@ -682,7 +682,7 @@ function ModulesEditor({
 
             <div>
               <label className="block text-xs font-medium text-muted-foreground">
-                Treść lekcji (Markdown): nagłówki (`###`), pogrubienia (`**tekst**`), ramki (`>`), listy (`- `), tabele (`|`)
+                {"Treść lekcji (Markdown): nagłówki (`###`), pogrubienia (`**tekst**`), ramki (`>`), listy (`- `), tabele (`|`)"}
               </label>
 
               {previewMode ? (
