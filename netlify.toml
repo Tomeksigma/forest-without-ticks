@@ -1,0 +1,15 @@
+# Netlify Configuration for TanStack Start + Nitro
+[build]
+  command = "npm run build"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NITRO_PRESET = "netlify"
+
+# Redirect all requests to Nitro's server handler on Netlify
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
+  force = false

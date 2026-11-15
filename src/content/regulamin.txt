@@ -1,0 +1,315 @@
+REGULAMIN KORZYSTANIA Z SERWISU INTERNETOWEGO „UWAGA KLESZCZ!”
+
+§ 1. Postanowienia ogólne
+
+1.  Niniejszy Regulamin określa zasady korzystania z serwisu internetowego „Uwaga Kleszcz!”, dostępnego pod adresem https://uwagakleszcz.netlify.app/, zwanego dalej „Serwisem”, w tym warunki świadczenia usług drogą elektroniczną, korzystania z materiałów edukacyjnych, quizów i certyfikatów oraz prawa i obowiązki użytkowników.
+
+2.  Właścicielem i administratorem Serwisu oraz usługodawcą w rozumieniu przepisów o świadczeniu usług drogą elektroniczną jest Olivia Moritz, osoba fizyczna realizująca indywidualny projekt edukacyjny w ramach programu „Uczelnie Przyszłości”, zwana dalej „Administratorem”.
+
+3.  Dane Administratora:
+
+  Imię i nazwisko: Olivia Moritz
+
+  Adres: Dąbrowica 5A,05-326 Poświętne
+
+  Adres e-mail: s097260@student.wum.edu.pl
+
+4.  Serwis ma charakter informacyjny i edukacyjny. Jego celem jest upowszechnianie wiedzy na temat kleszczy, chorób odkleszczowych, w szczególności boreliozy i kleszczowego zapalenia mózgu, oraz zasad profilaktyki i ograniczania ryzyka zakażenia.
+
+5.  Serwis jest skierowany do szerokiego grona odbiorców, w szczególności uczniów, nauczycieli oraz osób zainteresowanych profilaktyką zdrowotną. Wybrane funkcjonalności mogą stanowić element ogólnopolskiego konkursu edukacyjnego organizowanego przez Administratora.
+
+6.  Korzystanie z Serwisu jest dobrowolne i bezpłatne. Administrator nie pobiera opłat za przeglądanie treści, korzystanie z materiałów edukacyjnych, rozwiązywanie quizów ani generowanie certyfikatów.
+
+7.  Regulamin jest udostępniany nieodpłatnie w Serwisie, w sposób umożliwiający jego pobranie, zapisanie i odtworzenie.
+
+8.  Korzystanie z poszczególnych funkcjonalności Serwisu odbywa się na zasadach określonych w niniejszym Regulaminie oraz zgodnie z obowiązującymi przepisami prawa.
+
+§ 2. Definicje
+
+Na potrzeby niniejszego Regulaminu przyjmuje się następujące definicje:
+
+1.  Administrator – Olivia Moritz, prowadząca Serwis i świadcząca za jego pośrednictwem usługi drogą elektroniczną.
+
+2.  Serwis – strona internetowa „Uwaga Kleszcz!” wraz z dostępnymi w niej treściami, materiałami i funkcjonalnościami.
+
+3.  Użytkownik – każda osoba korzystająca z Serwisu, niezależnie od wieku i celu korzystania.
+
+4.  Materiały Edukacyjne – udostępniane w Serwisie artykuły, opracowania, prezentacje, ilustracje, grafiki, pliki PDF, PPTX oraz inne treści informacyjne i dydaktyczne.
+
+5.  Quiz – interaktywny moduł edukacyjny umożliwiający sprawdzenie wiedzy użytkownika poprzez udzielanie odpowiedzi na pytania.
+
+6.  Certyfikat – dokument elektroniczny generowany na podstawie danych wprowadzonych przez Użytkownika i wyniku uzyskanego w Quizie, zgodnie z zasadami określonymi dla danej ścieżki edukacyjnej.
+
+7.  Konkurs – ogólnopolski konkurs edukacyjny „Zauważ ryzyko, zanim kleszcz zauważy Ciebie – Nie odkładaj – Działaj!”, którego szczegółowe zasady określa odrębny regulamin.
+
+§ 3. Zakres usług świadczonych drogą elektroniczną
+
+1.  Administrator umożliwia Użytkownikom nieodpłatne korzystanie z następujących funkcjonalności Serwisu:
+
+    a)  przeglądania treści informacyjnych dotyczących kleszczy, chorób odkleszczowych i profilaktyki zdrowotnej;
+
+    b)  korzystania z bazy wiedzy oraz udostępnionych materiałów edukacyjnych;
+
+    c)  pobierania materiałów przeznaczonych do wykorzystania w procesie edukacyjnym;
+
+    d)  rozwiązywania quizów sprawdzających wiedzę;
+
+    e)  generowania i pobierania imiennych certyfikatów, jeżeli dana funkcjonalność przewiduje ich wydawanie;
+
+    f)  zapoznawania się z informacjami dotyczącymi Konkursu oraz dokumentami związanymi z uczestnictwem;
+
+    g)  korzystania z odnośników do materiałów i zasobów zewnętrznych.
+
+2.  Dostęp do podstawowych funkcjonalności Serwisu nie wymaga zakładania konta użytkownika ani rejestracji.
+
+3.  Usługi polegające na udostępnianiu treści są świadczone od momentu rozpoczęcia korzystania z danej funkcjonalności do momentu zakończenia korzystania z niej przez Użytkownika.
+
+4.  Usługa polegająca na wygenerowaniu Certyfikatu jest świadczona w ramach danej sesji korzystania z Quizu i kończy się z chwilą udostępnienia możliwości pobrania dokumentu albo zakończenia sesji przez Użytkownika.
+
+5.  Użytkownik może w dowolnym momencie zakończyć korzystanie z Serwisu poprzez opuszczenie strony internetowej. Nie wymaga to składania dodatkowych oświadczeń ani wypowiedzenia odrębnej umowy.
+
+6.  Administrator może rozwijać, aktualizować lub modyfikować dostępne funkcjonalności, z zachowaniem obowiązków wynikających z przepisów prawa oraz zasad określonych w niniejszym Regulaminie.
+
+§ 4. Warunki techniczne korzystania z Serwisu
+
+1.  Do korzystania z Serwisu niezbędne są:
+
+    a)  urządzenie umożliwiające dostęp do Internetu;
+
+    b)  aktywne połączenie internetowe;
+
+    c)  aktualna przeglądarka internetowa obsługująca standardowe technologie wykorzystywane przez współczesne strony internetowe, w tym JavaScript;
+
+    d)  oprogramowanie umożliwiające otwieranie pobieranych plików, w szczególności dokumentów PDF, jeżeli Użytkownik chce korzystać z materiałów w tej formie.
+
+2.  Niektóre funkcjonalności Serwisu, w szczególności Quiz i generowanie Certyfikatu, wymagają włączonej obsługi JavaScript.
+
+3.  Pobieranie Certyfikatów oraz Materiałów Edukacyjnych może wymagać zapewnienia odpowiedniej ilości wolnej pamięci na urządzeniu Użytkownika.
+
+4.  Korzystanie z Internetu wiąże się z typowymi zagrożeniami bezpieczeństwa teleinformatycznego, w szczególności ryzykiem przechwycenia danych, działania szkodliwego oprogramowania, nieuprawnionego dostępu do urządzenia lub korzystania z nieaktualnego oprogramowania.
+
+5.  Administrator stosuje rozwiązania techniczne odpowiednie do charakteru Serwisu oraz zaleca Użytkownikom korzystanie z aktualnego oprogramowania i zachowanie podstawowych zasad bezpieczeństwa w Internecie.
+
+6.  Administrator nie gwarantuje nieprzerwanej dostępności Serwisu w przypadku awarii infrastruktury zewnętrznej, przerw technicznych lub innych okoliczności niezależnych od Administratora. Ograniczenia te nie wyłączają odpowiedzialności Administratora przewidzianej przez bezwzględnie obowiązujące przepisy prawa.
+
+§ 5. Zasady korzystania z Serwisu
+
+1.  Użytkownik zobowiązany jest korzystać z Serwisu zgodnie z obowiązującymi przepisami prawa, niniejszym Regulaminem oraz z poszanowaniem praw innych osób.
+
+2.  Zabronione jest w szczególności:
+
+    a)  podejmowanie działań mających na celu zakłócenie funkcjonowania Serwisu lub jego infrastruktury;
+
+    b)  podejmowanie prób uzyskania nieuprawnionego dostępu do systemów informatycznych związanych z Serwisem;
+
+    c)  wykorzystywanie Serwisu do działań bezprawnych;
+
+    d)  dostarczanie za pośrednictwem Serwisu treści o charakterze bezprawnym;
+
+    e)  naruszanie praw autorskich, dóbr osobistych oraz innych praw przysługujących Administratorowi lub osobom trzecim.
+
+3.  Użytkownik powinien korzystać z Quizu samodzielnie i zgodnie z jego przeznaczeniem, szczególnie jeżeli uzyskany Certyfikat ma służyć jako potwierdzenie ukończenia ścieżki edukacyjnej.
+
+4.  Administrator może podejmować zgodne z prawem działania techniczne niezbędne do przeciwdziałania nadużyciom i zapewnienia prawidłowego funkcjonowania Serwisu.
+
+§ 6. Materiały edukacyjne i zasady ich wykorzystywania
+
+1.  Materiały Edukacyjne udostępniane w Serwisie służą przede wszystkim zwiększaniu wiedzy z zakresu profilaktyki chorób odkleszczowych i promowaniu bezpiecznych zachowań.
+
+2.  Użytkownicy mogą nieodpłatnie przeglądać, pobierać, zapisywać i drukować materiały udostępnione w Serwisie jako materiały przeznaczone do pobrania.
+
+3.  Materiały mogą być nieodpłatnie wykorzystywane przez uczniów, nauczycieli, szkoły i inne placówki edukacyjne do celów dydaktycznych, informacyjnych i niekomercyjnych, w szczególności podczas lekcji, warsztatów, prezentacji i zajęć profilaktycznych, z zastrzeżeniem praw osób trzecich oraz odmiennych oznaczeń zamieszczonych przy danym materiale.
+
+4.  Przy dalszym udostępnianiu materiałów należy zachować oznaczenie autorstwa, źródła oraz informacje o licencji, jeżeli zostały wskazane.
+
+5.  Uprawnienia określone w niniejszym paragrafie dotyczą materiałów, do których Administrator posiada odpowiednie prawa lub upoważnienie do udzielania wskazanych zezwoleń. Nie obejmują automatycznie materiałów osób trzecich udostępnionych na odrębnych warunkach.
+
+6.  Bez odrębnego uprawnienia nie jest dozwolone wykorzystywanie materiałów w sposób naruszający prawa osób trzecich, w szczególności przypisywanie sobie cudzego autorstwa lub rozpowszechnianie zmodyfikowanych materiałów w sposób sugerujący ich zatwierdzenie przez Administratora, jeżeli takie zatwierdzenie nie nastąpiło.
+
+7.  Administrator może zamieszczać w Serwisie materiały opracowane przy wykorzystaniu narzędzi sztucznej inteligencji. Materiały takie podlegają odpowiedniej weryfikacji przed ich udostępnieniem jako docelowe treści edukacyjne.
+
+8.  Ochrona prawna poszczególnych materiałów, w tym elementów wygenerowanych z wykorzystaniem sztucznej inteligencji, zależy od ich charakteru oraz spełnienia przesłanek przewidzianych w obowiązujących przepisach prawa.
+
+9.  Postanowienia niniejszego paragrafu nie ograniczają uprawnień wynikających z przepisów o dozwolonym użytku ani innych ustawowych wyjątków i ograniczeń praw autorskich.
+
+§ 7. Informacje dotyczące zdrowia
+
+1.  Treści publikowane w Serwisie mają charakter edukacyjny i informacyjny oraz służą upowszechnianiu wiedzy na temat profilaktyki zdrowotnej.
+
+2.  Informacje udostępniane w Serwisie nie stanowią indywidualnej diagnozy medycznej, porady lekarskiej ani zalecenia terapeutycznego dostosowanego do sytuacji konkretnej osoby.
+
+3.  Korzystanie z informacji znajdujących się w Serwisie nie zastępuje konsultacji z lekarzem ani innym uprawnionym pracownikiem ochrony zdrowia, w szczególności w przypadku wystąpienia objawów mogących wskazywać na chorobę odkleszczową.
+
+4.  W przypadku podejrzenia zakażenia, wystąpienia niepokojących objawów lub pogorszenia stanu zdrowia należy skorzystać z odpowiedniej pomocy medycznej.
+
+5.  Administrator dokłada starań, aby publikowane informacje były rzetelne, aktualne i zgodne z dostępną wiedzą naukową, w szczególności zasadami medycyny opartej na dowodach naukowych (Evidence-Based Medicine, EBM).
+
+6.  Administrator może aktualizować lub korygować treści edukacyjne w związku z rozwojem wiedzy medycznej, zmianą zaleceń właściwych instytucji lub stwierdzeniem nieścisłości.
+
+7.  Edukacyjny charakter Serwisu nie wyłącza odpowiedzialności Administratora w przypadkach określonych przez obowiązujące przepisy prawa.
+
+§ 8. Quizy edukacyjne
+
+1.  Serwis umożliwia korzystanie z interaktywnych quizów sprawdzających wiedzę zdobytą podczas korzystania z materiałów i ścieżek edukacyjnych.
+
+2.  Quizy mają charakter edukacyjny. Ich celem jest utrwalanie wiedzy oraz umożliwienie Użytkownikowi samodzielnego sprawdzenia stopnia opanowania określonych zagadnień.
+
+3.  Szczegółowe zasady zaliczenia Quizu, w szczególności liczba pytań, wymagany wynik i możliwość ponownego podejścia, są wskazywane przy danym Quizie lub w zasadach odpowiedniej ścieżki edukacyjnej.
+
+4.  Jeżeli Quiz stanowi element obowiązkowej ścieżki edukacyjnej Konkursu, zastosowanie mają również wymagania wynikające z Regulaminu Konkursu.
+
+5.  Korzystanie z Quizu nie wymaga zakładania konta ani podawania adresu e-mail.
+
+6.  Wyniki Quizu są przetwarzane na potrzeby bieżącej sesji użytkownika. Serwis nie prowadzi bazy danych wyników ani historii ukończonych quizów.
+
+7.  Zakończenie sesji lub odświeżenie strony może spowodować utratę bieżącego wyniku i konieczność ponownego rozwiązania Quizu.
+
+8.  Administrator nie zapewnia możliwości odtworzenia wyniku po zakończeniu sesji, jeżeli Użytkownik nie zachował wygenerowanego potwierdzenia.
+
+§ 9. Generowanie certyfikatów
+
+1.  Po spełnieniu warunków określonych dla danego Quizu lub ścieżki edukacyjnej Użytkownik może otrzymać możliwość wygenerowania imiennego Certyfikatu.
+
+2.  Wygenerowanie Certyfikatu wymaga wpisania imienia i nazwiska, które zostaną umieszczone na dokumencie.
+
+3.  Dane wprowadzone przez Użytkownika w celu wygenerowania Certyfikatu są wykorzystywane wyłącznie lokalnie, w obrębie przeglądarki internetowej, bez przesyłania ich do bazy danych Administratora.
+
+4.  Administrator nie zapisuje imion i nazwisk wpisanych do generatora, nie prowadzi rejestru wygenerowanych Certyfikatów i nie przechowuje historii wyników Quizu.
+
+5.  Certyfikat jest udostępniany do samodzielnego pobrania przez Użytkownika. Serwis nie wymaga podawania adresu e-mail i nie wysyła Certyfikatów pocztą elektroniczną.
+
+6.  Użytkownik powinien zweryfikować poprawność danych wpisanych na Certyfikacie przed jego pobraniem.
+
+7.  Po zakończeniu sesji Administrator nie ma możliwości odtworzenia Certyfikatu na podstawie wcześniej wpisanych danych.
+
+8.  Certyfikat potwierdza ukończenie określonego Quizu lub ścieżki edukacyjnej zgodnie z warunkami wskazanymi w Serwisie. Nie jest dokumentem potwierdzającym kwalifikacje zawodowe, uprawnienia medyczne ani ukończenie formalnego kształcenia.
+
+9.  Jeżeli Certyfikat stanowi wymagany załącznik do zgłoszenia konkursowego, Użytkownik jest zobowiązany zachować go i przekazać Organizatorowi w sposób określony w Regulaminie Konkursu.
+
+10. Certyfikat nie stanowi samodzielnego potwierdzenia tożsamości osoby, której dane zostały na nim wpisane. Zasady jego akceptacji i ewentualnej weryfikacji na potrzeby Konkursu określa Organizator Konkursu.
+
+§ 10. Korzystanie z Serwisu przez osoby niepełnoletnie
+
+1.  Serwis zawiera treści edukacyjne dostępne również dla osób niepełnoletnich.
+
+2.  Materiały przeznaczone dla młodzieży powinny być przedstawiane w sposób dostosowany do wieku i możliwości poznawczych odbiorców.
+
+3.  Korzystanie z ogólnodostępnych treści Serwisu i rozwiązywanie Quizów nie wymaga podawania danych kontaktowych ani zakładania konta.
+
+4.  Administrator zaleca, aby młodsi Użytkownicy korzystali z treści dotyczących zdrowia w razie potrzeby przy wsparciu rodzica, opiekuna lub nauczyciela.
+
+5.  Udział osób niepełnoletnich w Konkursie wymaga spełnienia warunków przewidzianych w odrębnym Regulaminie Konkursu, w tym uzyskania wymaganej zgody przedstawiciela ustawowego.
+
+6.  Korzystanie z ogólnodostępnych funkcjonalności Serwisu nie jest równoznaczne ze zgłoszeniem udziału w Konkursie.
+
+§ 11. Konkurs edukacyjny
+
+1.  Serwis może być wykorzystywany do informowania o ogólnopolskim konkursie edukacyjnym „Zauważ ryzyko, zanim kleszcz zauważy Ciebie – Nie odkładaj – Działaj!”.
+
+2.  Szczegółowe zasady Konkursu, w tym warunki udziału, wymagania dotyczące prac, harmonogram, sposób zgłoszenia, kryteria oceny, nagrody, prawa autorskie oraz przetwarzanie danych osobowych uczestników określają odrębny Regulamin Konkursu i związana z nim dokumentacja.
+
+3.  Zapoznanie się z treścią Serwisu lub ukończenie Quizu nie oznacza automatycznego zgłoszenia do Konkursu.
+
+4.  Uczestnictwo w Konkursie wymaga dokonania zgłoszenia zgodnie z jego regulaminem.
+
+5.  W razie rozbieżności między ogólnymi postanowieniami niniejszego Regulaminu a szczegółowymi zasadami uczestnictwa w Konkursie, do kwestii konkursowych zastosowanie ma Regulamin Konkursu, z zastrzeżeniem przepisów bezwzględnie obowiązujących.
+
+6.  Informacje dotyczące Konkursu powinny być udostępnione w Serwisie w sposób umożliwiający zapoznanie się z właściwą dokumentacją przed dokonaniem zgłoszenia.
+
+§ 12. Prawa autorskie i treści osób trzecich
+
+1.  Treści zamieszczone w Serwisie mogą podlegać ochronie na podstawie przepisów prawa autorskiego lub innych przepisów dotyczących własności intelektualnej.
+
+2.  Prawa do poszczególnych materiałów przysługują Administratorowi lub innym uprawnionym podmiotom, stosownie do ich autorstwa i podstawy prawnej wykorzystania.
+
+3.  Sam fakt udostępnienia materiału w Serwisie nie oznacza przeniesienia praw autorskich na Użytkownika.
+
+4.  Korzystanie z materiałów jest dozwolone w zakresie określonym w § 6 Regulaminu, na podstawie indywidualnie wskazanych warunków licencyjnych lub w granicach przewidzianych przez obowiązujące przepisy prawa.
+
+5.  Znaki graficzne, logotypy i oznaczenia partnerów, patronów oraz innych podmiotów pozostają objęte prawami właściwych uprawnionych, jeżeli taka ochrona im przysługuje.
+
+6.  Publikacja logotypu w Serwisie nie oznacza udzielenia Użytkownikowi prawa do jego dalszego wykorzystywania.
+
+7.  Prawa autorskie do prac zgłaszanych w ramach Konkursu oraz zakres uprawnień udzielanych Organizatorowi określa Regulamin Konkursu.
+
+§ 13. Ochrona danych osobowych i technologie wykorzystywane przez Serwis
+
+1.  Administratorem danych osobowych przetwarzanych w związku z funkcjonowaniem Serwisu jest Olivia Moritz.
+
+2.  Szczegółowe informacje dotyczące przetwarzania danych osobowych, w tym zakresu przetwarzania, podstaw prawnych, odbiorców danych oraz praw osób, których dane dotyczą, znajdują się w Polityce prywatności Serwisu.
+
+3.  Serwis korzysta z infrastruktury hostingowej Netlify oraz systemu zarządzania treścią Sanity CMS.
+
+4.  Serwis nie wymaga rejestracji kont użytkowników ani nie prowadzi bazy danych osobowych uczestników Quizu.
+
+5.  Dane wpisywane do generatora Certyfikatu są wykorzystywane wyłącznie w ramach bieżącej sesji przeglądarki, zgodnie z zasadami określonymi w § 9.
+
+6.  Dane przekazywane w związku z udziałem w Konkursie są przetwarzane na zasadach określonych w odrębnej klauzuli informacyjnej RODO dotyczącej Konkursu.
+
+7.  Informacje o stosowanych technologiach przechowywania informacji na urządzeniu Użytkownika, w tym ewentualnych plikach cookies, znajdują się w Polityce prywatności.
+
+§ 14. Zgłaszanie problemów i reklamacje
+
+1.  Użytkownik może zgłaszać Administratorowi nieprawidłowości związane z działaniem Serwisu, dostępnością materiałów edukacyjnych, funkcjonowaniem Quizu lub generowaniem Certyfikatów.
+
+2.  Zgłoszenia i reklamacje należy kierować na adres e-mail: s097260@student.wum.edu.pl.
+
+3.  W zgłoszeniu należy wskazać opis problemu, funkcjonalność, której dotyczy, oraz informacje umożliwiające jego wyjaśnienie. Nie należy przesyłać danych osobowych ani innych informacji wykraczających poza zakres niezbędny do rozpatrzenia sprawy.
+
+4.  Administrator rozpatruje reklamacje dotyczące usług świadczonych drogą elektroniczną w terminie 14 dni od ich otrzymania, chyba że przepisy prawa przewidują odmienny termin lub sposób postępowania.
+
+5.  Jeżeli do wyjaśnienia sprawy konieczne są dodatkowe informacje, Administrator może zwrócić się do Użytkownika o ich uzupełnienie.
+
+6.  Odpowiedź zostanie przekazana na adres e-mail, z którego dokonano zgłoszenia, chyba że Użytkownik wskaże inny właściwy sposób kontaktu.
+
+7.  Reklamacje dotyczące przebiegu Konkursu, oceny prac lub przyznawania nagród są rozpatrywane na podstawie odrębnego Regulaminu Konkursu.
+
+8.  Postanowienia niniejszego paragrafu nie ograniczają praw Użytkownika wynikających z obowiązujących przepisów.
+
+§ 15. Dostępność i aktualizacja Serwisu
+
+1.  Administrator podejmuje działania zmierzające do zapewnienia prawidłowego funkcjonowania Serwisu i dostępności jego podstawowych usług.
+
+2.  W Serwisie mogą być prowadzone prace techniczne, konserwacyjne i aktualizacyjne, powodujące czasowe ograniczenia dostępności poszczególnych funkcjonalności.
+
+3.  Administrator może aktualizować materiały edukacyjne, korygować błędy i usuwać nieaktualne informacje.
+
+4.  W przypadku stwierdzenia błędu merytorycznego dotyczącego profilaktyki zdrowotnej Administrator podejmuje odpowiednie działania w celu jego zweryfikowania i skorygowania.
+
+5.  Ograniczenie dostępności funkcjonalności związanych z Konkursem nie może prowadzić do nieuzasadnionego pozbawienia uczestników możliwości realizacji obowiązków przewidzianych w Regulaminie Konkursu. W przypadku istotnej awarii Administrator powinien podjąć odpowiednie działania organizacyjne, w tym rozważyć przedłużenie właściwych terminów, jeżeli będzie to uzasadnione okolicznościami.
+
+§ 16. Zmiany Regulaminu
+
+1.  Administrator może zmienić Regulamin z ważnych przyczyn, w szczególności w przypadku:
+
+    a)  zmiany przepisów prawa mających wpływ na funkcjonowanie Serwisu;
+
+    b)  zmiany sposobu świadczenia usług elektronicznych;
+
+    c)  wprowadzenia nowych funkcjonalności lub zakończenia udostępniania dotychczasowych;
+
+    d)  zmiany rozwiązań technicznych wykorzystywanych przez Serwis;
+
+    e)  konieczności usunięcia niejasności lub zapewnienia zgodności dokumentacji ze sposobem działania Serwisu.
+
+2.  Aktualna wersja Regulaminu będzie dostępna w Serwisie wraz z informacją o dacie jej obowiązywania.
+
+3.  Zmiany Regulaminu nie naruszają praw nabytych przez Użytkowników ani uprawnień wynikających z obowiązujących przepisów prawa.
+
+4.  Zmiany zasad uczestnictwa w Konkursie odbywają się na zasadach określonych w Regulaminie Konkursu.
+
+§ 17. Postanowienia końcowe
+
+1.  Regulamin podlega prawu polskiemu.
+
+2.  W sprawach nieuregulowanych Regulaminem zastosowanie mają właściwe przepisy obowiązującego prawa, w szczególności przepisy dotyczące świadczenia usług drogą elektroniczną, ochrony danych osobowych oraz prawa autorskiego.
+
+3.  Żadne postanowienie Regulaminu nie wyłącza ani nie ogranicza praw Użytkowników przysługujących im na podstawie bezwzględnie obowiązujących przepisów prawa.
+
+4.  Regulamin jest dostępny w Serwisie nieodpłatnie, w sposób umożliwiający jego zapisanie i odtworzenie.
+
+5.  Regulamin wchodzi w życie z dniem 01.11.2026r.
+
+Administrator Serwisu
+
+Olivia Moritz

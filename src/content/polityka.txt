@@ -1,0 +1,321 @@
+POLITYKA PRYWATNOŚCI SERWISU INTERNETOWEGO „UWAGA KLESZCZ!”
+
+wraz z informacją o plikach cookies
+
+§ 1. Postanowienia ogólne
+
+1. Niniejsza Polityka prywatności określa zasady przetwarzania danych osobowych oraz wykorzystywania plików cookies i podobnych technologii w związku z korzystaniem z serwisu internetowego „Uwaga Kleszcz!”, dostępnego pod adresem https://uwagakleszcz.netlify.app/, zwanego dalej „Serwisem”.
+
+2. Serwis ma charakter edukacyjny i informacyjny. Jego celem jest upowszechnianie wiedzy dotyczącej kleszczy, chorób odkleszczowych, w szczególności boreliozy i kleszczowego zapalenia mózgu, oraz zasad profilaktyki zdrowotnej.
+
+3. Polityka prywatności została przygotowana z uwzględnieniem przepisów rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO), ustawy z dnia 10 maja 2018 r. o ochronie danych osobowych oraz ustawy z dnia 12 lipca 2024 r. – Prawo komunikacji elektronicznej.
+
+4. Serwis nie wymaga zakładania kont użytkowników ani rejestracji w celu przeglądania materiałów edukacyjnych i korzystania z ogólnodostępnych funkcjonalności.
+
+5. Korzystanie z Serwisu jest bezpłatne.
+
+6. Dane osobowe są przetwarzane wyłącznie w określonych, zgodnych z prawem celach oraz w zakresie odpowiednim do charakteru świadczonych usług.
+
+§ 2. Administrator danych osobowych
+
+1. Administratorem danych osobowych przetwarzanych w związku z funkcjonowaniem Serwisu jest Olivia Moritz, osoba fizyczna prowadząca projekt edukacyjny „Uwaga Kleszcz!” w ramach programu „Uczelnie Przyszłości”, zwana dalej „Administratorem”.
+
+2. Dane Administratora:
+
+Imię i nazwisko: Olivia Moritz
+
+Adres e-mail: s097260@student.wum.edu.pl
+
+1. We wszystkich sprawach związanych z przetwarzaniem danych osobowych, w szczególności w zakresie wykonywania praw wynikających z RODO, można kontaktować się z Administratorem za pośrednictwem wskazanego adresu e-mail.
+
+2. Administrator odpowiada za ustalenie celów i sposobów przetwarzania danych osobowych w zakresie, w jakim przetwarzanie odbywa się na jego rzecz w związku z funkcjonowaniem Serwisu.
+
+§ 3. Zakres przetwarzanych danych osobowych
+
+1. W związku z korzystaniem z Serwisu mogą być przetwarzane następujące kategorie danych:
+
+1. dane techniczne związane z połączeniem z Serwisem, w szczególności adres IP, data i godzina połączenia, informacje o przeglądarce, systemie operacyjnym, żądanych zasobach oraz dane niezbędne do prawidłowego przesyłania treści;
+
+2. dane zawarte w korespondencji kierowanej do Administratora, w szczególności imię, nazwisko, adres e-mail i treść wiadomości, jeżeli zostały dobrowolnie przekazane;
+
+3. informacje techniczne przetwarzane przez dostawców infrastruktury hostingowej oraz systemu zarządzania treścią, w zakresie niezbędnym do świadczenia usług, zapewnienia ich bezpieczeństwa i prawidłowego funkcjonowania;
+
+4. dane przekazywane odrębnie w związku z udziałem w konkursie edukacyjnym, zgodnie z regulaminem konkursu i właściwą klauzulą informacyjną RODO.
+
+1. Administrator nie wymaga od osób przeglądających Serwis podawania imienia, nazwiska, adresu e-mail ani innych danych identyfikujących, chyba że Użytkownik sam podejmie kontakt lub zdecyduje się zgłosić do konkursu.
+
+2. Serwis nie prowadzi kont użytkowników, rejestru osób korzystających z quizów ani bazy historii wygenerowanych certyfikatów.
+
+3. Administrator nie wymaga przekazywania informacji o stanie zdrowia Użytkowników ani nie prowadzi za pośrednictwem Serwisu dokumentacji medycznej.
+
+4. Zakres danych technicznych przetwarzanych przez dostawców usług może zależeć od rzeczywistej konfiguracji wykorzystywanych rozwiązań oraz sposobu udostępniania treści Serwisu.
+
+§ 4. Cele i podstawy prawne przetwarzania danych
+
+1. Dane osobowe mogą być przetwarzane w następujących celach:
+
+a) Zapewnienie prawidłowego funkcjonowania Serwisu
+
+Przetwarzanie danych technicznych może być niezbędne do wyświetlania strony, przesyłania materiałów edukacyjnych, obsługi żądań przeglądarki, zapewnienia dostępności treści oraz przeciwdziałania zakłóceniom technicznym.
+
+Podstawa prawna: art. 6 ust. 1 lit. f RODO, tj. prawnie uzasadniony interes Administratora polegający na zapewnieniu prawidłowego działania Serwisu, jego bezpieczeństwa i dostępności, w zakresie, w jakim dane są przetwarzane przez Administratora w tych celach.
+
+b) Zapewnienie bezpieczeństwa Serwisu
+
+Dane techniczne mogą być wykorzystywane w celu identyfikowania błędów, wykrywania nadużyć, przeciwdziałania nieuprawnionemu dostępowi oraz ochrony infrastruktury informatycznej.
+
+Podstawa prawna: art. 6 ust. 1 lit. f RODO, tj. prawnie uzasadniony interes Administratora polegający na ochronie Serwisu i jego infrastruktury.
+
+c) Obsługa korespondencji
+
+Dane przekazane w wiadomości skierowanej do Administratora mogą być przetwarzane w celu udzielenia odpowiedzi, wyjaśnienia zgłoszonej sprawy, obsługi zapytania lub rozpatrzenia reklamacji dotyczącej Serwisu.
+
+Podstawa prawna: art. 6 ust. 1 lit. f RODO, tj. prawnie uzasadniony interes Administratora polegający na prowadzeniu korespondencji i obsłudze zgłoszeń, a w przypadkach, w których przetwarzanie jest niezbędne do wykonania umowy lub podjęcia działań na żądanie osoby przed jej zawarciem – art. 6 ust. 1 lit. b RODO.
+
+d) Dochodzenie roszczeń lub obrona przed roszczeniami
+
+Dane mogą być przetwarzane w zakresie niezbędnym do ustalenia, dochodzenia lub obrony przed roszczeniami związanymi z funkcjonowaniem Serwisu.
+
+Podstawa prawna: art. 6 ust. 1 lit. f RODO.
+
+e) Realizacja obowiązków prawnych
+
+Dane mogą być przetwarzane w zakresie, w jakim obowiązek ich przetwarzania wynika z przepisów prawa.
+
+Podstawa prawna: art. 6 ust. 1 lit. c RODO, w związku z właściwymi przepisami ustanawiającymi określony obowiązek.
+
+1. Administrator nie wykorzystuje danych odwiedzających Serwis do profilowania reklamowego ani prowadzenia spersonalizowanych kampanii marketingowych.
+
+2. Dane związane z udziałem w konkursie edukacyjnym są przetwarzane w celach i na podstawach prawnych określonych w odrębnej klauzuli informacyjnej RODO dotyczącej konkursu.
+
+§ 5. Quizy edukacyjne i generowanie certyfikatów
+
+1. Serwis udostępnia interaktywne quizy edukacyjne umożliwiające sprawdzenie wiedzy oraz, po spełnieniu odpowiednich warunków, wygenerowanie imiennego certyfikatu.
+
+2. W celu wygenerowania certyfikatu Użytkownik może zostać poproszony o wpisanie imienia i nazwiska, które zostaną umieszczone na dokumencie.
+
+3. Mechanizm generowania certyfikatu działa lokalnie, w przeglądarce internetowej Użytkownika.
+
+4. Imię i nazwisko wprowadzone do generatora nie są przesyłane do bazy danych Administratora ani zapisywane w systemie zarządzania treścią Sanity CMS.
+
+5. Wyniki quizów oraz dane wpisane do generatora są wykorzystywane wyłącznie w ramach bieżącej sesji aplikacji. Administrator nie tworzy na ich podstawie bazy uczestników, nie przechowuje historii wyników ani nie prowadzi rejestru wygenerowanych certyfikatów.
+
+6. Serwis nie wymaga podawania adresu e-mail w celu wygenerowania certyfikatu oraz nie wysyła certyfikatów za pośrednictwem poczty elektronicznej.
+
+7. Po zakończeniu sesji lub odświeżeniu strony dane przechowywane w tymczasowym stanie aplikacji nie są zachowywane przez mechanizm quizu.
+
+8. W przypadku lokalnego generowania certyfikatu, bez przekazywania danych identyfikujących Administratorowi, Administrator nie otrzymuje tych danych i nie wykorzystuje ich do dalszego przetwarzania.
+
+9. Użytkownik sam decyduje o pobraniu i zapisaniu certyfikatu na swoim urządzeniu oraz o jego ewentualnym przekazaniu innym podmiotom.
+
+10. Jeżeli certyfikat jest przekazywany Administratorowi w ramach zgłoszenia konkursowego, dane zawarte w tym dokumencie są od tego momentu przetwarzane zgodnie z zasadami dotyczącymi udziału w konkursie.
+
+11. Administrator nie wykorzystuje danych wpisywanych do generatora certyfikatów do tworzenia profili użytkowników, działań reklamowych ani analiz indywidualnych wyników.
+
+§ 6. Dane uczestników konkursu edukacyjnego
+
+1. Serwis może być wykorzystywany do udostępniania informacji i dokumentacji dotyczącej ogólnopolskiego konkursu edukacyjnego „Zauważ ryzyko, zanim kleszcz zauważy Ciebie – Nie odkładaj – Działaj!”.
+
+2. Organizatorem konkursu oraz administratorem danych osobowych przetwarzanych na potrzeby jego przeprowadzenia jest Olivia Moritz.
+
+3. Dane osobowe przekazywane w ramach zgłoszeń konkursowych mogą obejmować w szczególności dane identyfikacyjne uczestnika, informacje o szkole, dane kontaktowe, informacje o ukończeniu ścieżki edukacyjnej, pracę konkursową oraz – w przypadku osób niepełnoletnich – dane ich przedstawicieli ustawowych.
+
+4. Szczegółowe informacje dotyczące celów, podstaw prawnych, zakresu i okresów przetwarzania danych uczestników konkursu znajdują się w odrębnej klauzuli informacyjnej RODO udostępnianej wraz z dokumentacją konkursową.
+
+5. Udział w konkursie jest odrębny od korzystania z ogólnodostępnych funkcjonalności Serwisu.
+
+6. Samo przeglądanie informacji o konkursie ani rozwiązanie quizu nie jest równoznaczne z dokonaniem zgłoszenia konkursowego.
+
+7. Publikowanie prac konkursowych oraz danych identyfikujących uczestników odbywa się zgodnie z regulaminem konkursu, udzielonymi uprawnieniami dotyczącymi prac oraz właściwymi podstawami prawnymi przetwarzania danych osobowych.
+
+8. Publikacja imienia, nazwiska i nazwy szkoły uczestnika, jeżeli nie jest niezbędna do realizacji konkursu, odbywa się na podstawie odrębnej, dobrowolnej zgody udzielonej zgodnie z obowiązującymi przepisami.
+
+9. Odmowa udzielenia zgody na dodatkową publikację danych identyfikujących uczestnika nie stanowi podstawy do wykluczenia z konkursu ani pozbawienia nagrody.
+
+§ 7. Odbiorcy danych i dostawcy usług
+
+1. W związku z funkcjonowaniem Serwisu Administrator korzysta z usług podmiotów zapewniających infrastrukturę techniczną oraz narzędzia niezbędne do publikowania i udostępniania treści.
+
+2. Do wykorzystywanych rozwiązań należą:
+
+a) Netlify
+
+Usługa hostingowa służąca do udostępniania Serwisu w Internecie oraz obsługi jego infrastruktury technicznej.
+
+W związku z dostarczaniem strony internetowej dostawca może przetwarzać dane techniczne związane z żądaniami kierowanymi do Serwisu, w szczególności adresy IP, informacje o połączeniu oraz dane niezbędne do zapewnienia bezpieczeństwa i prawidłowego funkcjonowania usługi.
+
+b) Sanity CMS
+
+System zarządzania treścią wykorzystywany do przechowywania, organizowania i udostępniania materiałów publikowanych w Serwisie, w szczególności tekstów, grafik i zdjęć.
+
+Sanity CMS nie służy do przechowywania imion, nazwisk ani wyników użytkowników rozwiązujących quizy. W związku z technicznym udostępnianiem zasobów dostawca może jednak przetwarzać dane niezbędne do realizacji żądań i ochrony infrastruktury.
+
+1. Administrator może korzystać również z usług dostawcy poczty elektronicznej w celu odbierania i obsługi wiadomości kierowanych na adres kontaktowy Serwisu.
+
+2. Dane mogą być udostępniane osobom współpracującym z Administratorem w zakresie niezbędnym do obsługi Serwisu, z zachowaniem odpowiednich zasad poufności i ochrony danych.
+
+3. Dane mogą zostać udostępnione uprawnionym organom publicznym wyłącznie w przypadkach przewidzianych przepisami prawa.
+
+4. Administrator nie sprzedaje danych osobowych użytkowników Serwisu ani nie udostępnia ich podmiotom trzecim w celu prowadzenia przez nie niezależnych kampanii reklamowych.
+
+5. W przypadku korzystania z usług podmiotów przetwarzających dane osobowe w imieniu Administratora współpraca odbywa się na podstawie właściwych warunków umownych, w tym umowy lub postanowień dotyczących powierzenia przetwarzania danych, gdy wymagają tego przepisy RODO.
+
+§ 8. Przekazywanie danych poza Europejski Obszar Gospodarczy
+
+1. W związku z korzystaniem z usług Netlify, Sanity CMS oraz dostawcy poczty elektronicznej dane osobowe mogą być przekazywane poza Europejski Obszar Gospodarczy, w szczególności do Stanów Zjednoczonych, zgodnie z zakresem i sposobem działania poszczególnych usług.
+
+2. Przekazywanie danych osobowych poza Europejski Obszar Gospodarczy odbywa się wyłącznie z zachowaniem wymogów określonych w rozdziale V RODO, w szczególności na podstawie właściwej decyzji Komisji Europejskiej stwierdzającej odpowiedni stopień ochrony danych lub z zastosowaniem odpowiednich zabezpieczeń, takich jak standardowe klauzule umowne zatwierdzone przez Komisję Europejską.
+
+3. Informacje o stosowanych mechanizmach przekazywania danych oraz możliwości uzyskania kopii odpowiednich zabezpieczeń można uzyskać, kontaktując się z Administratorem pod adresem s097260@student.wum.edu.pl.
+
+§ 9. Okres przechowywania danych
+
+1. Dane osobowe są przechowywane przez okres niezbędny do realizacji celu, w którym zostały zebrane, z uwzględnieniem obowiązujących przepisów prawa.
+
+2. Dane techniczne, w tym informacje zawarte w dziennikach serwerowych, są przechowywane przez okres 12 miesięcy, zgodnie z rzeczywistą konfiguracją infrastruktury oraz zasadami przetwarzania danych stosowanymi przez dostawców usług. Dane te są wykorzystywane w celu zapewnienia prawidłowego funkcjonowania Serwisu, jego bezpieczeństwa oraz diagnozowania problemów technicznych.
+
+3. Dane osobowe przekazane w korespondencji elektronicznej są przechowywane przez czas niezbędny do rozpatrzenia sprawy i udzielenia odpowiedzi, a następnie przez okres 12 miesięcy, jeżeli jest to niezbędne do udokumentowania korespondencji, ustalenia, dochodzenia lub obrony przed roszczeniami.
+
+1. Imiona, nazwiska i wyniki wprowadzone do lokalnego mechanizmu quizu oraz generatora certyfikatów nie są zapisywane w bazie danych Administratora. Informacje te są wykorzystywane wyłącznie w bieżącej sesji aplikacji i nie są zachowywane przez mechanizm quizu po jej zakończeniu.
+
+2. Okresy przechowywania danych związanych z organizacją konkursu edukacyjnego określa odrębna klauzula informacyjna RODO dotycząca konkursu.
+
+3. Po upływie właściwych okresów dane są usuwane lub poddawane skutecznej anonimizacji, chyba że dalsze przechowywanie wynika z obowiązku prawnego lub innej zgodnej z prawem podstawy przetwarzania.
+
+§ 10. Prawa osób, których dane dotyczą
+
+1. Każdej osobie, której dane osobowe są przetwarzane przez Administratora, przysługują – w przypadkach i zakresie przewidzianych przepisami RODO – następujące prawa:
+
+1. prawo dostępu do danych osobowych oraz uzyskania ich kopii;
+
+2. prawo do sprostowania danych nieprawidłowych lub uzupełnienia danych niekompletnych;
+
+3. prawo do usunięcia danych, jeżeli zachodzą przesłanki określone w art. 17 RODO;
+
+4. prawo do ograniczenia przetwarzania danych;
+
+5. prawo do przenoszenia danych, gdy spełnione są ustawowe warunki tego prawa;
+
+6. prawo wniesienia sprzeciwu wobec przetwarzania danych osobowych na podstawie art. 6 ust. 1 lit. f RODO;
+
+7. prawo do cofnięcia zgody w dowolnym momencie, jeżeli określone przetwarzanie odbywa się na podstawie zgody, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem.
+
+1. W celu realizacji przysługujących praw można skontaktować się z Administratorem pod adresem: s097260@student.wum.edu.pl.
+
+2. Administrator może zwrócić się o przekazanie dodatkowych informacji niezbędnych do potwierdzenia tożsamości osoby składającej żądanie, jeżeli istnieją uzasadnione wątpliwości co do jej tożsamości.
+
+3. Administrator udziela odpowiedzi na żądania dotyczące realizacji praw zgodnie z terminami i zasadami przewidzianymi w art. 12 RODO.
+
+4. Jeżeli Administrator nie posiada danych identyfikujących osobę, w szczególności dlatego, że dane zostały wykorzystane wyłącznie lokalnie w przeglądarce użytkownika, nie ma obowiązku pozyskiwania dodatkowych danych wyłącznie w celu umożliwienia identyfikacji tej osoby.
+
+§ 11. Prawo do wniesienia skargi
+
+1. Osoba, której dane dotyczą, ma prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych, jeżeli uzna, że przetwarzanie jej danych osobowych narusza przepisy RODO.
+
+2. Organem nadzorczym właściwym w Polsce jest Prezes Urzędu Ochrony Danych Osobowych.
+
+3. Informacje o sposobie składania skarg są dostępne na stronie internetowej: https://uodo.gov.pl/.
+
+4. Skorzystanie z prawa wniesienia skargi nie wyłącza możliwości kontaktu z Administratorem w celu wyjaśnienia sprawy.
+
+§ 12. Pliki cookies i podobne technologie
+
+1. Pliki cookies są niewielkimi informacjami zapisywanymi na urządzeniu końcowym użytkownika lub odczytywanymi z tego urządzenia podczas korzystania ze strony internetowej.
+
+2. Podobne technologie mogą obejmować również inne mechanizmy przechowywania informacji lub uzyskiwania dostępu do informacji znajdujących się na urządzeniu użytkownika.
+
+3. Serwis został zaprojektowany jako strona edukacyjna, która nie wymaga kont użytkowników, nie prowadzi profilowania reklamowego ani nie korzysta z narzędzi takich jak Google Analytics czy Meta Pixel.
+
+4. Na potrzeby funkcjonowania Serwisu wykorzystywane są usługi Netlify i Sanity CMS. W zależności od konfiguracji technicznej usługi te mogą wykorzystywać pliki cookies lub inne technologie niezbędne do prawidłowego działania infrastruktury, zapewnienia bezpieczeństwa i dostarczania treści.
+
+5. Serwis nie wykorzystuje cookies marketingowych ani reklamowych w ramach potwierdzonej konfiguracji.
+
+6. Mechanizm quizu wykorzystuje tymczasowy stan aplikacji w przeglądarce. Dane wpisane do generatora certyfikatu nie są celowo zapisywane przez mechanizm quizu w plikach cookies ani w pamięci trwałej przeglądarki.
+
+7. Pliki cookies i podobne technologie, których użycie jest niezbędne do świadczenia usługi żądanej przez Użytkownika lub prawidłowego przekazania komunikatu za pośrednictwem sieci, mogą być stosowane w zakresie przewidzianym przez obowiązujące przepisy bez uzyskiwania odrębnej zgody.
+
+8. Jeżeli Administrator w przyszłości wprowadzi technologie, których stosowanie wymaga zgody użytkownika, odpowiednie mechanizmy będą uruchamiane dopiero po uzyskaniu wymaganej zgody, z zapewnieniem możliwości jej odmowy i wycofania.
+
+9. Sam fakt korzystania z Serwisu lub kontynuowania przeglądania strony nie jest traktowany jako zgoda na stosowanie technologii wymagających odrębnej zgody.
+
+10. Użytkownik może zarządzać plikami cookies za pomocą ustawień swojej przeglądarki internetowej, w szczególności usuwać je, blokować lub ograniczać ich zapisywanie.
+
+11. Ograniczenie stosowania niektórych technologii niezbędnych do funkcjonowania Serwisu może wpłynąć na prawidłowe działanie wybranych funkcjonalności.
+
+12. Serwis wykorzystuje wyłącznie pliki cookies lub podobne technologie niezbędne do prawidłowego funkcjonowania strony, zapewnienia bezpieczeństwa oraz technicznego dostarczania treści, o ile są stosowane w ramach usług Netlify i Sanity CMS. Serwis nie wykorzystuje plików cookies do profilowania reklamowego ani prowadzenia działań marketingowych. Stosowanie technologii niezbędnych odbywa się zgodnie z art. 399 ustawy – Prawo komunikacji elektronicznej.
+
+§ 13. Zabezpieczenie danych osobowych
+
+1. Administrator stosuje środki techniczne i organizacyjne odpowiednie do charakteru, zakresu i ryzyka związanego z przetwarzaniem danych osobowych.
+
+2. Środki te służą w szczególności ochronie danych przed nieuprawnionym dostępem, przypadkową utratą, zniszczeniem, nieuprawnioną zmianą lub ujawnieniem.
+
+3. Serwis korzysta z infrastruktury technicznej dostawców usług hostingowych i zarządzania treścią, którzy stosują własne środki bezpieczeństwa w zakresie świadczonych usług.
+
+4. Dostęp do narzędzi administracyjnych wykorzystywanych do zarządzania Serwisem powinien być ograniczony do osób upoważnionych.
+
+5. Administrator zapewnia, aby zakres dostępu do danych i treści odpowiadał rzeczywistym zadaniom osób korzystających z zaplecza technicznego.
+
+6. Żadne rozwiązanie techniczne nie gwarantuje całkowitego wyeliminowania zagrożeń związanych z korzystaniem z Internetu. Administrator podejmuje jednak działania odpowiednie do wymaganego poziomu ochrony danych.
+
+§ 14. Dane osób niepełnoletnich
+
+1. Serwis ma charakter edukacyjny i może być wykorzystywany również przez osoby niepełnoletnie, w szczególności uczniów szkół ponadpodstawowych.
+
+2. Korzystanie z ogólnodostępnych materiałów edukacyjnych i quizów nie wymaga zakładania konta ani podawania danych kontaktowych.
+
+3. Administrator stosuje rozwiązania zmierzające do ograniczenia przetwarzania danych osobowych osób niepełnoletnich do niezbędnego minimum.
+
+4. Imię i nazwisko wpisane do generatora certyfikatu nie są zapisywane w bazie danych Administratora.
+
+5. W przypadku uczestnictwa osoby niepełnoletniej w konkursie edukacyjnym wymagane jest spełnienie zasad dotyczących zgody przedstawiciela ustawowego oraz przekazania odpowiednich informacji o przetwarzaniu danych, określonych w dokumentacji konkursowej.
+
+6. Informacje dotyczące ochrony danych osobowych powinny być przedstawiane osobom niepełnoletnim w sposób jasny i zrozumiały, odpowiedni do charakteru oferowanych funkcjonalności.
+
+7. Wprowadzenie w przyszłości nowych funkcjonalności wymagających zbierania danych osobowych dzieci lub młodzieży będzie poprzedzone oceną właściwej podstawy prawnej i dodatkowych obowiązków wynikających z przepisów o ochronie danych osobowych.
+
+§ 15. Linki do stron zewnętrznych
+
+1. Serwis może zawierać odnośniki do stron internetowych instytucji naukowych, medycznych, edukacyjnych, partnerów projektu lub innych podmiotów.
+
+2. Po przejściu na zewnętrzną stronę internetową zasady przetwarzania danych osobowych mogą być określane przez podmiot odpowiedzialny za tę stronę.
+
+3. Administrator nie określa zasad przetwarzania danych przez niezależnych administratorów zewnętrznych stron internetowych.
+
+4. Użytkownik powinien zapoznać się z odpowiednimi informacjami dotyczącymi ochrony prywatności udostępnianymi przez podmioty prowadzące strony zewnętrzne.
+
+5. Niniejszy paragraf nie wyłącza odpowiedzialności Administratora za własne działania związane z udostępnianiem odnośników lub integrowaniem usług zewnętrznych, jeżeli taka odpowiedzialność wynika z obowiązujących przepisów.
+
+§ 16. Zautomatyzowane podejmowanie decyzji i profilowanie
+
+1. Administrator nie wykorzystuje danych osobowych Użytkowników Serwisu do podejmowania decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, wywołujących wobec nich skutki prawne lub w podobny sposób istotnie na nich wpływających, w rozumieniu art. 22 RODO.
+
+2. Administrator nie prowadzi profilowania użytkowników w celach marketingowych ani reklamowych.
+
+3. Automatyczne sprawdzanie odpowiedzi w Quizie i obliczanie wyniku służy wyłącznie realizacji funkcji edukacyjnej i nie stanowi decyzji wywołującej skutki określone w art. 22 RODO.
+
+4. Ocena prac konkursowych odbywa się zgodnie z odrębnym Regulaminem Konkursu.
+
+§ 17. Zmiany Polityki prywatności
+
+1. Administrator może aktualizować niniejszą Politykę prywatności w przypadku zmiany przepisów prawa, sposobu funkcjonowania Serwisu, zakresu przetwarzania danych osobowych lub stosowanych rozwiązań technicznych.
+
+2. Aktualna wersja Polityki prywatności będzie udostępniana w Serwisie wraz z datą jej obowiązywania.
+
+3. Jeżeli wprowadzone zmiany będą wymagały przekazania dodatkowych informacji osobom, których dane dotyczą, lub uzyskania zgody na określone działania, Administrator podejmie odpowiednie czynności zgodnie z obowiązującymi przepisami.
+
+4. Zmiany Polityki prywatności nie wpływają na zgodność z prawem przetwarzania dokonanego przed ich wprowadzeniem.
+
+§ 18. Postanowienia końcowe
+
+1. Niniejsza Polityka prywatności stanowi dokument informacyjny dotyczący zasad ochrony danych osobowych oraz wykorzystywania cookies i podobnych technologii w Serwisie.
+
+2. Polityka prywatności jest dostępna nieodpłatnie pod adresem internetowym Serwisu w sposób umożliwiający zapoznanie się z jej treścią.
+
+3. W sprawach nieuregulowanych niniejszą Polityką zastosowanie znajdują właściwe przepisy prawa, w szczególności RODO oraz ustawa – Prawo komunikacji elektronicznej.
+
+4. Niniejsza Polityka prywatności obowiązuje od dnia 06.11.2026r.
+
+Administrator danych osobowych
+
+Olivia Moritz

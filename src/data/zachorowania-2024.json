@@ -1,0 +1,105 @@
+{
+ "year": 2024,
+ "disease": "borelioza",
+ "source": "NIZP PZH–PIB / GIS, „Choroby zakaźne i zatrucia w Polsce w 2024 roku”",
+ "sourceUrl": "https://wwwold.pzh.gov.pl/oldpage/epimeld/2024/Ch_2024.pdf",
+ "borelioza": [
+  {
+   "teryt": "02",
+   "name": "dolnośląskie",
+   "cases": 1566,
+   "incidence": 54.5
+  },
+  {
+   "teryt": "04",
+   "name": "kujawsko-pomorskie",
+   "cases": 905,
+   "incidence": 45.5
+  },
+  {
+   "teryt": "06",
+   "name": "lubelskie",
+   "cases": 1705,
+   "incidence": 85.1
+  },
+  {
+   "teryt": "08",
+   "name": "lubuskie",
+   "cases": 755,
+   "incidence": 77.7
+  },
+  {
+   "teryt": "10",
+   "name": "łódzkie",
+   "cases": 1227,
+   "incidence": 52.1
+  },
+  {
+   "teryt": "12",
+   "name": "małopolskie",
+   "cases": 4527,
+   "incidence": 132.0
+  },
+  {
+   "teryt": "14",
+   "name": "mazowieckie",
+   "cases": 3846,
+   "incidence": 69.8
+  },
+  {
+   "teryt": "16",
+   "name": "opolskie",
+   "cases": 681,
+   "incidence": 73.0
+  },
+  {
+   "teryt": "18",
+   "name": "podkarpackie",
+   "cases": 1888,
+   "incidence": 91.3
+  },
+  {
+   "teryt": "20",
+   "name": "podlaskie",
+   "cases": 1523,
+   "incidence": 134.2
+  },
+  {
+   "teryt": "22",
+   "name": "pomorskie",
+   "cases": 2168,
+   "incidence": 91.9
+  },
+  {
+   "teryt": "24",
+   "name": "śląskie",
+   "cases": 4159,
+   "incidence": 96.6
+  },
+  {
+   "teryt": "26",
+   "name": "świętokrzyskie",
+   "cases": 622,
+   "incidence": 53.5
+  },
+  {
+   "teryt": "28",
+   "name": "warmińsko-mazurskie",
+   "cases": 1469,
+   "incidence": 108.5
+  },
+  {
+   "teryt": "30",
+   "name": "wielkopolskie",
+   "cases": 1708,
+   "incidence": 49.0
+  },
+  {
+   "teryt": "32",
+   "name": "zachodniopomorskie",
+   "cases": 1111,
+   "incidence": 68.3
+  }
+ ],
+ "kzm": null
+}
