@@ -150,8 +150,15 @@ function TeacherGate({ onOk }: { onOk: () => void }) {
     e.preventDefault(); setBusy(true); setErr("");
     try {
       const r = await checkTeacherPassword({ data: { password: pw } });
-      if (r.ok) { unlockedThisVisit = true; onOk(); } else setErr("Nieprawidłowy kod. Spróbuj ponownie.");
-    } catch { setErr("Nie udało się sprawdzić kodu. Spróbuj ponownie."); }
+      if (r.ok) {
+        unlockedThisVisit = true;
+        onOk();
+      } else {
+        setErr((r as any).message || "Nieprawidłowy kod. Spróbuj ponownie.");
+      }
+    } catch {
+      setErr("Nie udało się sprawdzić kodu. Spróbuj ponownie.");
+    }
     setBusy(false);
   };
   return (

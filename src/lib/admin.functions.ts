@@ -10,11 +10,49 @@ function verifyAdmin(password: string): boolean {
   return expected.length > 0 && password.trim() === expected.trim();
 }
 
-/** Check admin password */
+/** Check admin password with rate limiting (max 5 failed attempts per 15 min per IP) */
 export const checkAdminPassword = createServerFn({ method: "POST" })
   .validator((d: { password: string }) => ({ password: String(d?.password ?? "").slice(0, 200) }))
   .handler(async ({ data }) => {
-    return { ok: verifyAdmin(data.password) };
+    const { getClientIp, checkRateLimit, recordFailedAttempt, clearAttemptsOnSuccess } = await import("./rate-limit.server");
+    const ip = getClientIp();
+
+    // 1. Check if IP is currently blocked
+    const rateCheck = await checkRateLimit("admin", ip);
+    if (!rateCheck.allowed) {
+      return {
+        ok: false,
+        blocked: true,
+        attemptsUsed: rateCheck.attemptsUsed,
+        maxAttempts: rateCheck.maxAttempts,
+        remainingAttempts: 0,
+        message: "Zbyt wiele nieudanych prób logowania. Twoje IP zostało zablokowane na 15 minut.",
+      };
+    }
+
+    // 2. Verify password
+    const isCorrect = verifyAdmin(data.password);
+    if (!isCorrect) {
+      await recordFailedAttempt("admin", ip);
+      const updatedAttempts = rateCheck.attemptsUsed + 1;
+      const remaining = Math.max(0, rateCheck.maxAttempts - updatedAttempts);
+      const isNowBlocked = updatedAttempts >= rateCheck.maxAttempts;
+
+      return {
+        ok: false,
+        blocked: isNowBlocked,
+        attemptsUsed: updatedAttempts,
+        maxAttempts: rateCheck.maxAttempts,
+        remainingAttempts: remaining,
+        message: isNowBlocked
+          ? "Zbyt wiele nieudanych prób. Twoje IP zostało zablokowane na 15 minut."
+          : `Nieprawidłowe hasło administratora (Próba ${updatedAttempts}/${rateCheck.maxAttempts}).`,
+      };
+    }
+
+    // 3. Clear failed attempts on success
+    await clearAttemptsOnSuccess("admin", ip);
+    return { ok: true, blocked: false, attemptsUsed: 0, maxAttempts: rateCheck.maxAttempts, remainingAttempts: rateCheck.maxAttempts };
   });
 
 /** Get all site texts (with fallback) */

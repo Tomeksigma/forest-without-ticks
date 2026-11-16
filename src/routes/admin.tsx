@@ -101,7 +101,7 @@ function AdminPage() {
         setAuthPassword(password);
         sessionStorage.setItem("admin_pw", password);
       } else {
-        setAuthError("Nieprawidłowe hasło administratora.");
+        setAuthError((res as any).message || "Nieprawidłowe hasło administratora.");
       }
     } catch {
       setAuthError("Błąd weryfikacji hasła.");
