@@ -55,14 +55,21 @@ function Cert() {
       </div>
       <div className="relative w-full overflow-hidden rounded-lg shadow-lg" style={{ aspectRatio: "3 / 2", containerType: "inline-size" }}>
         <img src={certBg.url} alt="Certyfikat ukończenia ścieżki edukacyjnej o kleszczach" className="absolute inset-0 h-full w-full" />
-        <div className="absolute left-[19%] right-[19%] top-[58.5%] text-center italic" style={{ fontFamily: "var(--font-display)", fontSize: "3.2cqw", color: "#5a3416" }}>
+        <div className="absolute left-[19%] right-[19%] top-[55.8%] text-center italic" style={{ fontFamily: "var(--font-display)", fontSize: "3.2cqw", color: "#5a3416" }}>
           {name}
         </div>
-        {modules.map((m, i) => (
-          <div key={m.n} className="absolute left-[25.5%] w-[6%] text-center font-medium" style={{ top: `${68.7 + i * 3}%`, fontSize: "1.5cqw", color: "#5a3416" }}>
-            {progress.scores[m.n]}%
-          </div>
-        ))}
+        {modules.map((m, i) => {
+          const tops = ["68.0%", "70.5%", "73.0%"];
+          return (
+            <div
+              key={m.n}
+              className="absolute left-[25.5%] w-[6%] text-center font-medium"
+              style={{ top: tops[i], fontSize: "1.5cqw", color: "#5a3416" }}
+            >
+              {progress.scores[m.n]}%
+            </div>
+          );
+        })}
         <div className="absolute left-[43%] w-[9.5%] text-center font-medium" style={{ top: "71.5%", fontSize: "1.5cqw", color: "#5a3416" }}>
           {date}
         </div>
