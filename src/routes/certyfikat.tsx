@@ -59,7 +59,7 @@ function Cert() {
           {name}
         </div>
         {modules.map((m, i) => {
-          const tops = ["68.0%", "70.5%", "73.0%"];
+          const tops = ["68.5%", "71.1%", "73.7%"];
           return (
             <div
               key={m.n}
