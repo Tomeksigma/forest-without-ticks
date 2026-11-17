@@ -182,11 +182,11 @@ export const getModulesData = createServerFn({ method: "GET" })
 /** Save a lesson (create or update) */
 export const saveLesson = createServerFn({ method: "POST" })
   .validator((d: {
-    id?: number;
+    id?: number | undefined;
     moduleId: number;
     title: string;
     content_md: string;
-    sort_order?: number;
+    sort_order?: number | undefined;
     adminPassword: string;
   }) => d)
   .handler(async ({ data }) => {
@@ -255,12 +255,12 @@ export const saveModule = createServerFn({ method: "POST" })
 /** Save a quiz question */
 export const saveQuizQuestion = createServerFn({ method: "POST" })
   .validator((d: {
-    id?: number;
+    id?: number | undefined;
     scope: string;
     q: string;
     options: string[];
     correct: number;
-    sort_order?: number;
+    sort_order?: number | undefined;
     adminPassword: string;
   }) => d)
   .handler(async ({ data }) => {

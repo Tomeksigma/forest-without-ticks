@@ -505,19 +505,15 @@ function ModulesEditor({
     if (!curMod) return;
     setSavingLesson(true);
     try {
-      const lessonPayload: Parameters<typeof saveLesson>[0]["data"] = {
-        moduleId: curMod.id,
-        title: lessonTitle,
-        content_md: lessonMd,
-        sort_order: lessonSort,
-        adminPassword,
-      };
-      if (selectedLessonId !== "new") {
-        lessonPayload.id = selectedLessonId;
-      }
-
       await saveLesson({
-        data: lessonPayload,
+        data: {
+          moduleId: curMod.id,
+          title: lessonTitle,
+          content_md: lessonMd,
+          sort_order: lessonSort,
+          adminPassword,
+          ...(selectedLessonId !== "new" ? { id: selectedLessonId } : {}),
+        },
       });
       onSaved(`Zapisano lekcję: ${lessonTitle}`);
     } catch (e: any) {
@@ -783,20 +779,16 @@ function QuizzesEditor({
   const handleSaveQuestion = async (q: typeof editList[0]) => {
     setSavingId(q.id);
     try {
-      const questionPayload: Parameters<typeof saveQuizQuestion>[0]["data"] = {
-        scope: selectedScope,
-        q: q.q,
-        options: q.options,
-        correct: q.correct,
-        sort_order: q.sort_order,
-        adminPassword,
-      };
-      if (q.id !== 0) {
-        questionPayload.id = q.id;
-      }
-
       await saveQuizQuestion({
-        data: questionPayload,
+        data: {
+          scope: selectedScope,
+          q: q.q,
+          options: q.options,
+          correct: q.correct,
+          sort_order: q.sort_order,
+          adminPassword,
+          ...(q.id !== 0 ? { id: q.id } : {}),
+        },
       });
       onSaved(`Zapisano pytanie: "${q.q}"`);
     } catch (e: any) {
