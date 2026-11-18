@@ -76,7 +76,9 @@ export function SiteFooter() {
 
 /** Renders a plain-text document: blank-line separated paragraphs, short lines as headings. */
 export function DocText({ text }: { text: string }) {
-  const parts = text.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean);
+  if (!text) return null;
+  const normalized = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  const parts = normalized.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean);
   return (
     <div className="space-y-4 text-base leading-relaxed">
       {parts.map((p, i) => {

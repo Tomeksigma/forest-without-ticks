@@ -23,6 +23,12 @@ import {
   type DbModule,
 } from "@/lib/admin.functions";
 import { MarkdownView } from "@/components/markdown-view";
+import defaultOlivia from "@/content/olivia.txt?raw";
+import defaultKonkurs from "@/content/konkurs.txt?raw";
+import defaultKlauzula from "@/content/klauzula-rodo.txt?raw";
+import defaultPolityka from "@/content/polityka.txt?raw";
+import defaultRegulamin from "@/content/regulamin.txt?raw";
+import defaultStandardy from "@/content/standardy-ochrony.txt?raw";
 
 export const Route = createFileRoute("/admin")({
   loader: async () => {
@@ -333,12 +339,12 @@ function TextsEditor({
     { key: "homepage.hero_kicker", label: "Strona główna: Mały nagłówek baneru (kicker)", defaultVal: "Projekt edukacyjny" },
     { key: "homepage.hero_title", label: "Strona główna: Główny tytuł baneru", defaultVal: "Zauważ ryzyko, zanim kleszcz zauważy Ciebie" },
     { key: "homepage.hero_subtitle", label: "Strona główna: Podtytuł baneru", defaultVal: "Nie odkładaj – Działaj!" },
-    { key: "homepage.olivia", label: "Strona główna: Treść sekcji „O projekcie” (akapit po akapicie)", multiline: true, rows: 8 },
-    { key: "konkurs.text", label: "Strona Konkursu: Pełny tekst regulaminu konkursu", multiline: true, rows: 10 },
-    { key: "klauzula_rodo.text", label: "Strona Konkursu: Klauzula informacyjna RODO", multiline: true, rows: 8 },
-    { key: "polityka.text", label: "Polityka prywatności serwisu", multiline: true, rows: 8 },
-    { key: "regulamin.text", label: "Regulamin serwisu", multiline: true, rows: 8 },
-    { key: "standardy_ochrony.text", label: "Standardy Ochrony Małoletnich", multiline: true, rows: 8 },
+    { key: "homepage.olivia", label: "Strona główna: Treść sekcji „O projekcie” (akapit po akapicie)", multiline: true, rows: 8, defaultVal: defaultOlivia },
+    { key: "konkurs.text", label: "Strona Konkursu: Pełny tekst regulaminu konkursu", multiline: true, rows: 12, defaultVal: defaultKonkurs },
+    { key: "klauzula_rodo.text", label: "Strona Konkursu: Klauzula informacyjna RODO", multiline: true, rows: 10, defaultVal: defaultKlauzula },
+    { key: "polityka.text", label: "Polityka prywatności serwisu", multiline: true, rows: 12, defaultVal: defaultPolityka },
+    { key: "regulamin.text", label: "Regulamin serwisu", multiline: true, rows: 12, defaultVal: defaultRegulamin },
+    { key: "standardy_ochrony.text", label: "Standardy Ochrony Małoletnich", multiline: true, rows: 10, defaultVal: defaultStandardy },
   ];
 
   const [values, setValues] = useState<Record<string, string>>({});

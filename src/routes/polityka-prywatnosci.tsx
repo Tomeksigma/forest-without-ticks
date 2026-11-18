@@ -1,11 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import text from "@/content/polityka.txt?raw";
+import defaultText from "@/content/polityka.txt?raw";
 import doc from "@/assets/polityka-prywatnosci-aktualna.docx.asset.json";
 import { DocText, PageHero } from "@/components/site-layout";
 import { Notice } from "@/components/notices";
 import privacyClause from "@/assets/klauzula-rodo-konkurs.docx.asset.json";
+import { getSiteTexts } from "@/lib/admin.functions";
 
 export const Route = createFileRoute("/polityka-prywatnosci")({
+  loader: async () => {
+    try {
+      const res = await getSiteTexts();
+      return { texts: res.texts };
+    } catch {
+      return { texts: {} };
+    }
+  },
   head: () => ({
     meta: [
       { title: "Polityka prywatności – Uwaga Kleszcz!" },
@@ -16,7 +25,14 @@ export const Route = createFileRoute("/polityka-prywatnosci")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: () => (
+  component: PolitykaPage,
+});
+
+function PolitykaPage() {
+  const { texts } = Route.useLoaderData();
+  const content = texts["polityka.text"] || defaultText;
+
+  return (
     <main>
       <PageHero kicker="Dokumenty" title="Polityka prywatności" />
       <div className="mx-auto max-w-3xl px-6 py-10">
@@ -28,8 +44,8 @@ export const Route = createFileRoute("/polityka-prywatnosci")({
           <p><a href={privacyClause.url} download className="font-medium text-primary underline">Pobierz klauzulę informacyjną RODO dotyczącą konkursu (DOCX)</a></p>
           <p><Link to="/konkurs" hash="klauzula-rodo" className="text-primary underline">Przeczytaj pełną klauzulę informacyjną RODO</Link></p>
         </section>
-        <DocText text={text} />
+        <DocText text={content} />
       </div>
     </main>
-  ),
-});
+  );
+}

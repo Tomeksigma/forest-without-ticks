@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import text from "@/content/konkurs.txt?raw";
-import privacyText from "@/content/klauzula-rodo.txt?raw";
-import protectionText from "@/content/standardy-ochrony.txt?raw";
+import defaultText from "@/content/konkurs.txt?raw";
+import defaultPrivacyText from "@/content/klauzula-rodo.txt?raw";
+import defaultProtectionText from "@/content/standardy-ochrony.txt?raw";
 import doc from "@/assets/regulamin-konkursu-aktualny.docx.asset.json";
 import adultForm from "@/assets/formularz-pelnoletni.docx.asset.json";
 import minorForm from "@/assets/formularz-niepelnoletni.docx.asset.json";
@@ -9,8 +9,17 @@ import privacyClause from "@/assets/klauzula-rodo-konkurs.docx.asset.json";
 import childProtection from "@/assets/standardy-ochrony-maloletnich.docx.asset.json";
 import { DocText, PageHero } from "@/components/site-layout";
 import { Notice } from "@/components/notices";
+import { getSiteTexts } from "@/lib/admin.functions";
 
 export const Route = createFileRoute("/konkurs")({
+  loader: async () => {
+    try {
+      const res = await getSiteTexts();
+      return { texts: res.texts };
+    } catch {
+      return { texts: {} };
+    }
+  },
   head: () => ({
     meta: [
       { title: "Konkurs na mural – Uwaga Kleszcz!" },
@@ -21,7 +30,16 @@ export const Route = createFileRoute("/konkurs")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: () => (
+  component: KonkursPage,
+});
+
+function KonkursPage() {
+  const { texts } = Route.useLoaderData();
+  const text = texts["konkurs.text"] || defaultText;
+  const privacyText = texts["klauzula_rodo.text"] || defaultPrivacyText;
+  const protectionText = texts["standardy_ochrony.text"] || defaultProtectionText;
+
+  return (
     <main>
       <PageHero kicker="Ogólnopolski konkurs edukacyjny" title="Konkurs na projekt muralu">
         Dla uczniów kształcących się w zawodzie technik leśnik. Pytania: <a className="underline" href="mailto:s097260@student.wum.edu.pl">s097260@student.wum.edu.pl</a>
@@ -61,5 +79,5 @@ export const Route = createFileRoute("/konkurs")({
         </section>
       </div>
     </main>
-  ),
-});
+  );
+}

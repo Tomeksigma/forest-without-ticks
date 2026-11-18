@@ -1,10 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import text from "@/content/regulamin.txt?raw";
+import defaultText from "@/content/regulamin.txt?raw";
 import doc from "@/assets/regulamin-serwisu.docx.asset.json";
 import { DocText, PageHero } from "@/components/site-layout";
 import { Notice } from "@/components/notices";
+import { getSiteTexts } from "@/lib/admin.functions";
 
 export const Route = createFileRoute("/regulamin")({
+  loader: async () => {
+    try {
+      const res = await getSiteTexts();
+      return { texts: res.texts };
+    } catch {
+      return { texts: {} };
+    }
+  },
   head: () => ({
     meta: [
       { title: "Regulamin serwisu – Uwaga Kleszcz!" },
@@ -15,7 +24,14 @@ export const Route = createFileRoute("/regulamin")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: () => (
+  component: RegulaminPage,
+});
+
+function RegulaminPage() {
+  const { texts } = Route.useLoaderData();
+  const content = texts["regulamin.text"] || defaultText;
+
+  return (
     <main>
       <PageHero kicker="Dokumenty" title="Regulamin serwisu" />
       <div className="mx-auto max-w-3xl px-6 py-10">
@@ -26,8 +42,8 @@ export const Route = createFileRoute("/regulamin")({
           <p><Link to="/konkurs" hash="dokumenty" className="text-primary underline">Regulamin konkursu, formularze zgłoszeniowe i klauzula RODO</Link></p>
           <p><Link to="/konkurs" hash="standardy-ochrony" className="text-primary underline">Standardy Ochrony Małoletnich i wersja dla uczniów</Link></p>
         </section>
-        <DocText text={text} />
+        <DocText text={content} />
       </div>
     </main>
-  ),
-});
+  );
+}
