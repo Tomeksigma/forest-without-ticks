@@ -23,29 +23,29 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <>
-    <section aria-label="Patronaty honorowe" className="no-print border-b bg-patronage">
-      <div className="mx-auto max-w-6xl px-4 py-4">
-        <p className="mb-3 text-center text-sm font-semibold text-primary">Patronaty honorowe</p>
-        <div className="mx-auto grid max-w-4xl grid-cols-2 items-center justify-center gap-5 sm:gap-10">
-          <img src={honoraryForest.url} alt="Lasy Państwowe — patronat honorowy Dyrektora Generalnego Lasów Państwowych" width={2400} height={600} className="aspect-[4/1] w-full object-contain" />
-          <img src={honoraryHealth.url} alt="Główny Inspektorat Sanitarny — patronat honorowy" width={2400} height={648} className="aspect-[4/1] w-full object-contain" />
+      <section aria-label="Patronaty honorowe" className="no-print border-b bg-patronage">
+        <div className="mx-auto max-w-6xl px-4 py-4">
+          <p className="mb-3 text-center text-sm font-semibold text-primary">Patronaty honorowe</p>
+          <div className="mx-auto grid max-w-4xl grid-cols-2 items-center justify-center gap-5 sm:gap-10">
+            <img src={honoraryForest.url} alt="Lasy Państwowe — patronat honorowy Dyrektora Generalnego Lasów Państwowych" width={2400} height={600} className="aspect-[4/1] w-full object-contain" />
+            <img src={honoraryHealth.url} alt="Główny Inspektorat Sanitarny — patronat honorowy" width={2400} height={648} className="aspect-[4/1] w-full object-contain" />
+          </div>
         </div>
-      </div>
-    </section>
-    <header className="no-print sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3">
-        <Link to="/" className="text-xl font-semibold text-primary" style={{ fontFamily: "var(--font-display)" }}>Uwaga Kleszcz!</Link>
-        <button className="ml-auto rounded-md border px-3 py-1 text-sm xl:hidden" onClick={() => setOpen(!open)} aria-expanded={open}>Menu</button>
-        <nav className={`${open ? "flex" : "hidden"} absolute left-0 right-0 top-full flex-col border-b bg-background p-4 xl:static xl:ml-auto xl:flex xl:flex-row xl:border-0 xl:bg-transparent xl:p-0`}>
-          {nav.map((n) => (
-            <Link key={n.to} to={n.to} onClick={() => setOpen(false)} activeOptions={{ exact: n.to === "/" }}
-              className="rounded-md px-3 py-2 text-sm hover:bg-muted xl:px-2" activeProps={{ className: "bg-secondary font-medium text-primary" }}>
-              {n.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
-    </header>
+      </section>
+      <header className="no-print sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3">
+          <Link to="/" className="text-xl font-semibold text-primary" style={{ fontFamily: "var(--font-display)" }}>Uwaga Kleszcz!</Link>
+          <button className="ml-auto rounded-md border px-3 py-1 text-sm xl:hidden" onClick={() => setOpen(!open)} aria-expanded={open}>Menu</button>
+          <nav className={`${open ? "flex" : "hidden"} absolute left-0 right-0 top-full flex-col border-b bg-background p-4 xl:static xl:ml-auto xl:flex xl:flex-row xl:border-0 xl:bg-transparent xl:p-0`}>
+            {nav.map((n) => (
+              <Link key={n.to} to={n.to} onClick={() => setOpen(false)} activeOptions={{ exact: n.to === "/" }}
+                className="rounded-md px-3 py-2 text-sm hover:bg-muted xl:px-2" activeProps={{ className: "bg-secondary font-medium text-primary" }}>
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </header>
     </>
   );
 }
@@ -56,7 +56,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="flex flex-row flex-nowrap items-center justify-center" style={{ containerType: "inline-size", gap: "2.5cqw" }}>
           <img src={fe.url} alt="Fundusze Europejskie dla Rozwoju Społecznego, Rzeczpospolita Polska, Dofinansowane przez Unię Europejską, NCBR" className="w-auto" style={{ height: "4cqw" }} loading="lazy" />
-                    <img src={up.url} alt="Uczelnie Przyszłości" className="w-auto" style={{ height: "6cqw", transform: "translateY(-0.9cqw)" }} loading="lazy" />
+          <img src={up.url} alt="Uczelnie Przyszłości" className="w-auto" style={{ height: "6cqw", transform: "translateY(-0.9cqw)" }} loading="lazy" />
           <img src={wum.url} alt="Warszawski Uniwersytet Medyczny" className="w-auto" style={{ height: "5.6cqw" }} loading="lazy" />
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">

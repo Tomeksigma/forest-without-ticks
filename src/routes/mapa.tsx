@@ -49,7 +49,7 @@ function MapPage() {
       <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 lg:grid-cols-[1.4fr_1fr_1fr]">
         <section className="rounded-xl border bg-card p-4">
           <div className="mb-3 flex flex-wrap gap-2" role="group" aria-label="Warstwa">
-            {(["borelioza", "kzm"] as Layer[]).map((l) => (
+            {(["borelioza"] as Layer[]).map((l) => (
               <button key={l} onClick={() => setLayer(l)} aria-pressed={layer === l}
                 className={`rounded-full border px-3 py-1 text-sm ${layer === l ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}>
                 {l === "borelioza" ? "Borelioza" : "KZM"}
