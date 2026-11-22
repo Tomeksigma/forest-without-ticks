@@ -518,7 +518,7 @@ function ModulesEditor({
           content_md: lessonMd,
           sort_order: lessonSort,
           adminPassword,
-          ...(selectedLessonId !== "new" ? { id: selectedLessonId } : {}),
+          id: selectedLessonId !== "new" ? (selectedLessonId as number) : undefined,
         },
       });
       onSaved(`Zapisano lekcję: ${lessonTitle}`);
@@ -793,7 +793,7 @@ function QuizzesEditor({
           correct: q.correct,
           sort_order: q.sort_order,
           adminPassword,
-          ...(q.id !== 0 ? { id: q.id } : {}),
+          id: q.id !== 0 ? (q.id as number) : undefined,
         },
       });
       onSaved(`Zapisano pytanie: "${q.q}"`);

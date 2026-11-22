@@ -55,9 +55,24 @@ function parseMarkdown(content: string): Block[] {
     // 2. Markdown Table (lines starting with |)
     if (line.startsWith("|")) {
       const tableLines: string[] = [];
-      while (i < lines.length && lines[i]!.trim().startsWith("|")) {
-        tableLines.push(lines[i]!.trim());
-        i++;
+      // Collect all | lines, allowing blank lines between rows
+      while (i < lines.length) {
+        const cur = lines[i]!.trim();
+        if (cur.startsWith("|")) {
+          tableLines.push(cur);
+          i++;
+        } else if (!cur) {
+          // Look ahead: if the next non-empty line is also a | row, include the blank and continue
+          let j = i + 1;
+          while (j < lines.length && !lines[j]!.trim()) j++;
+          if (j < lines.length && lines[j]!.trim().startsWith("|")) {
+            i++; // skip blank line, continue collecting
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
       }
       if (tableLines.length >= 2) {
         const parseRow = (rowStr: string) =>
@@ -89,6 +104,16 @@ function parseMarkdown(content: string): Block[] {
         if (cur.startsWith(">")) {
           quoteLines.push(cur.replace(/^>\s?/, ""));
           i++;
+        } else if (!cur) {
+          // Look ahead: if the next non-empty line is also a > line, treat as continuation
+          let j = i + 1;
+          while (j < lines.length && !lines[j]!.trim()) j++;
+          if (j < lines.length && lines[j]!.trim().startsWith(">")) {
+            quoteLines.push(""); // preserve blank line within blockquote
+            i++;
+          } else {
+            break;
+          }
         } else {
           break;
         }
