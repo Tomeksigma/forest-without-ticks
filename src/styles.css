@@ -81,3 +81,17 @@
   .no-print { display: none !important; }
   body { background: white; }
 }
+
+/* Hide Lovable badge/heart icon injected by the platform */
+[data-lovable-badge],
+#lovable-badge,
+lovable-badge,
+.lovable-badge,
+[id^="lovable"],
+[class*="lovable"],
+a[href*="lovable.dev"],
+iframe[src*="lovable"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

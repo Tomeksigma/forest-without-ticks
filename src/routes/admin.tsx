@@ -256,6 +256,7 @@ function AdminPage() {
         {activeTab === "modules" && (
           <ModulesEditor
             modules={data.modules}
+            texts={data.texts}
             adminPassword={authPassword}
             onSaved={(msg) => {
               showStatus(msg);
@@ -345,6 +346,19 @@ function TextsEditor({
     { key: "polityka.text", label: "Polityka prywatności serwisu", multiline: true, rows: 12, defaultVal: defaultPolityka },
     { key: "regulamin.text", label: "Regulamin serwisu", multiline: true, rows: 12, defaultVal: defaultRegulamin },
     { key: "standardy_ochrony.text", label: "Standardy Ochrony Małoletnich", multiline: true, rows: 10, defaultVal: defaultStandardy },
+    // --- Linki do pobierania (Konkurs) ---
+    { key: "konkurs.doc_url", label: "Konkurs – URL: Regulamin Konkursu", defaultVal: "" },
+    { key: "konkurs.adult_form_url", label: "Konkurs – URL: Formularz pełnoletni", defaultVal: "" },
+    { key: "konkurs.minor_form_url", label: "Konkurs – URL: Formularz niepełnoletni", defaultVal: "" },
+    { key: "konkurs.privacy_clause_url", label: "Konkurs – URL: Klauzula RODO", defaultVal: "" },
+    { key: "konkurs.child_protection_url", label: "Konkurs – URL: Standardy Ochrony", defaultVal: "" },
+    // --- Pytania odblokowujące moduły ---
+    { key: "unlock.module1.word", label: "Pyt. obl. Moduł I – słowo kluczowe (np. borelioza)", defaultVal: "borelioza" },
+    { key: "unlock.module1.stem", label: "Pyt. obl. Moduł I – rdzeń słowa (np. borelioz)", defaultVal: "borelioz" },
+    { key: "unlock.module2.word", label: "Pyt. obl. Moduł II – słowo kluczowe (np. repelent)", defaultVal: "repelent" },
+    { key: "unlock.module2.stem", label: "Pyt. obl. Moduł II – rdzeń słowa (np. repelent)", defaultVal: "repelent" },
+    { key: "unlock.module3.word", label: "Pyt. obl. Moduł III – słowo kluczowe (np. antybiotyk)", defaultVal: "antybiotyk" },
+    { key: "unlock.module3.stem", label: "Pyt. obl. Moduł III – rdzeń słowa (np. antybiotyk)", defaultVal: "antybiotyk" },
   ];
 
   const [values, setValues] = useState<Record<string, string>>({});
@@ -429,10 +443,12 @@ function TextsEditor({
    ────────────────────────────────────────────────────────────── */
 function ModulesEditor({
   modules,
+  texts,
   adminPassword,
   onSaved,
 }: {
   modules: DbModule[];
+  texts?: Record<string, string>;
   adminPassword: string;
   onSaved: (msg: string) => void;
 }) {
@@ -443,6 +459,16 @@ function ModulesEditor({
   const [modTitle, setModTitle] = useState("");
   const [modLead, setModLead] = useState("");
   const [savingMod, setSavingMod] = useState(false);
+
+  // Unlock question state
+  const defaultWords: Record<number, { word: string; stem: string }> = {
+    1: { word: "borelioza", stem: "borelioz" },
+    2: { word: "repelent", stem: "repelent" },
+    3: { word: "antybiotyk", stem: "antybiotyk" },
+  };
+  const [unlockWord, setUnlockWord] = useState("");
+  const [unlockStem, setUnlockStem] = useState("");
+  const [savingUnlock, setSavingUnlock] = useState(false);
 
   // Lesson edit state
   const [selectedLessonId, setSelectedLessonId] = useState<number | "new">(-1);
@@ -456,6 +482,10 @@ function ModulesEditor({
     if (curMod) {
       setModTitle(curMod.title);
       setModLead(curMod.lead);
+      const modNum = curMod.n || (selectedModIndex + 1);
+      const def = defaultWords[modNum] || { word: "kleszcz", stem: "kleszcz" };
+      setUnlockWord(texts?.[`unlock.module${modNum}.word`] || def.word);
+      setUnlockStem(texts?.[`unlock.module${modNum}.stem`] || def.stem);
       if (curMod.lessons.length > 0) {
         const first = curMod.lessons[0]!;
         setSelectedLessonId(first.id);
@@ -504,6 +534,35 @@ function ModulesEditor({
       alert("Błąd: " + e.message);
     } finally {
       setSavingMod(false);
+    }
+  };
+
+  const handleSaveUnlockQuestion = async () => {
+    if (!curMod) return;
+    const modNum = curMod.n || (selectedModIndex + 1);
+    setSavingUnlock(true);
+    try {
+      await Promise.all([
+        saveSiteText({
+          data: {
+            key: `unlock.module${modNum}.word`,
+            value: unlockWord.trim(),
+            adminPassword,
+          },
+        }),
+        saveSiteText({
+          data: {
+            key: `unlock.module${modNum}.stem`,
+            value: unlockStem.trim(),
+            adminPassword,
+          },
+        }),
+      ]);
+      onSaved(`Zapisano pytanie odblokowujące dla Modułu ${curMod.roman}`);
+    } catch (e: any) {
+      alert("Błąd: " + e.message);
+    } finally {
+      setSavingUnlock(false);
     }
   };
 
@@ -602,6 +661,48 @@ function ModulesEditor({
         </div>
       </div>
 
+      {/* Pytanie odblokowujące (bramka na końcu modułu) */}
+      <div className="rounded-xl border bg-card p-5">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h3 className="text-base font-semibold">Pytanie odblokowujące (bramka na końcu Modułu {curMod.roman})</h3>
+          <span className="text-xs text-muted-foreground">Uczeń musi podliczyć wystąpienia tego słowa w module</span>
+        </div>
+        <p className="mt-1 text-xs text-muted-foreground">
+          Zmieniając słowo kluczowe i rdzeń, system automatycznie przelicza prawidłową liczbę wystąpień w lekcjach i generuje odpowiedzi w quizie bramkowym.
+        </p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          <div>
+            <label className="block text-xs font-medium text-foreground">Słowo kluczowe (wyświetlane w pytaniu)</label>
+            <input
+              type="text"
+              value={unlockWord}
+              onChange={(e) => setUnlockWord(e.target.value)}
+              placeholder="np. borelioza"
+              className="mt-1 w-full rounded-md border bg-background p-2 text-sm"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-medium text-foreground">Rdzeń słowa do zliczania w tekście</label>
+            <input
+              type="text"
+              value={unlockStem}
+              onChange={(e) => setUnlockStem(e.target.value)}
+              placeholder="np. borelioz (zlicza: borelioza, boreliozy, boreliozą)"
+              className="mt-1 w-full rounded-md border bg-background p-2 text-sm"
+            />
+          </div>
+        </div>
+        <div className="mt-3 flex justify-end">
+          <button
+            onClick={handleSaveUnlockQuestion}
+            disabled={savingUnlock || !unlockWord.trim() || !unlockStem.trim()}
+            className="rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:opacity-90 disabled:opacity-50"
+          >
+            {savingUnlock ? "Zapisywanie..." : "Zapisz pytanie odblokowujące"}
+          </button>
+        </div>
+      </div>
+
       {/* Lessons split view */}
       <div className="grid gap-6 md:grid-cols-[260px_1fr]">
         {/* Left: lesson list */}
@@ -687,9 +788,37 @@ function ModulesEditor({
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-muted-foreground">
-                {"Treść lekcji (Markdown): nagłówki (`###`), pogrubienia (`**tekst**`), ramki (`>`), listy (`- `), tabele (`|`)"}
-              </label>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <label className="block text-xs font-medium text-muted-foreground">
+                  Treść lekcji (Markdown): nagłówki (###), pogrubienia (**tekst**), linki ([tekst](url)), ramki (&gt;), listy (- ), tabele (|)
+                </label>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const linkUrl = prompt("Wklej adres URL (np. https://example.com lub link do pliku):", "https://");
+                      if (linkUrl && linkUrl.trim()) {
+                        const linkLabel = prompt("Wpisz tekst linku (np. Kliknij tutaj / Zobacz więcej):", "Kliknij tutaj") || "Link";
+                        const mdLink = `[${linkLabel}](${linkUrl.trim()})`;
+                        setLessonMd((prev) => prev ? `${prev} ${mdLink}` : mdLink);
+                      }
+                    }}
+                    className="rounded border border-primary/40 bg-primary/10 px-2 py-1 text-xs font-semibold text-primary hover:bg-primary/20"
+                  >
+                    + Wstaw link [tekst](url)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const noteText = "> **Zapamiętaj**\n> Treść wyróżnionej wskazówki...";
+                      setLessonMd((prev) => prev ? `${prev}\n\n${noteText}` : noteText);
+                    }}
+                    className="rounded border px-2 py-1 text-xs text-muted-foreground hover:bg-muted"
+                  >
+                    + Ramka wyróżnienia
+                  </button>
+                </div>
+              </div>
 
               {previewMode ? (
                 <div className="mt-2 min-h-[300px] rounded-lg border bg-background p-6 shadow-inner">
@@ -700,10 +829,13 @@ function ModulesEditor({
                   rows={16}
                   value={lessonMd}
                   onChange={(e) => setLessonMd(e.target.value)}
-                  placeholder="Wpisz treść lekcji w formacie Markdown..."
+                  placeholder="Wpisz treść lekcji w formacie Markdown... Aby dodać link, wpisz: [Tekst do kliknięcia](https://adres-strony.pl) lub wklej bezpośrednio adres https://..."
                   className="mt-2 w-full rounded-lg border bg-background p-4 font-mono text-sm leading-relaxed focus:border-primary focus:outline-none"
                 />
               )}
+              <p className="mt-1 text-xs text-muted-foreground">
+                💡 <strong>Dodawanie linków:</strong> Użyj przycisku <strong>+ Wstaw link</strong>, wpisz <code className="bg-muted px-1 rounded">[Nazwa linku](https://adres.pl)</code> lub wklej bezpośrednio adres <code className="bg-muted px-1 rounded">https://...</code> — linki otworzą się w nowej karcie.
+              </p>
             </div>
 
             <div className="flex justify-end pt-2">

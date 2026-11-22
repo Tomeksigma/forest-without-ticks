@@ -5,23 +5,28 @@ import { moduleImages } from "@/lib/images";
 import { HealthNotice, ProgressNotice } from "@/components/notices";
 import { isUnlocked, useProgress, saveKey } from "@/lib/progress";
 import { keyQuestion } from "@/lib/key-question";
-import { getModulesData } from "@/lib/admin.functions";
+import { getModulesData, getSiteTexts } from "@/lib/admin.functions";
 import { MarkdownView } from "@/components/markdown-view";
 
 export const Route = createFileRoute("/modul/$n")({
   loader: async ({ params }) => {
     let list: any[] = fallbackModules;
+    let texts: Record<string, string> = {};
     try {
-      const res = await getModulesData();
-      if (res && res.modules && res.modules.length > 0) {
-        list = res.modules;
+      const [modsRes, textsRes] = await Promise.all([
+        getModulesData(),
+        (await import("@/lib/admin.functions")).getSiteTexts(),
+      ]);
+      if (modsRes && modsRes.modules && modsRes.modules.length > 0) {
+        list = modsRes.modules;
       }
+      texts = textsRes.texts || {};
     } catch {
       // fallback
     }
     const m = list.find((x) => String(x.n) === params.n);
     if (!m) throw notFound();
-    return { module: m, n: m.n };
+    return { module: m, n: m.n, texts };
   },
   head: ({ loaderData }) => {
     const m = loaderData?.module;
@@ -32,7 +37,7 @@ export const Route = createFileRoute("/modul/$n")({
 });
 
 function ModulePage() {
-  const { module: m, n } = Route.useLoaderData();
+  const { module: m, n, texts } = Route.useLoaderData();
   const { progress } = useProgress();
   const [lesson, setLesson] = useState(0);
   const [quiz, setQuiz] = useState(false);
@@ -74,7 +79,7 @@ function ModulePage() {
           </button>
         </nav>
         {quiz ? (
-          <KeyQuestion m={m} done={!!progress.passed[n]} />
+          <KeyQuestion m={m} done={!!progress.passed[n]} texts={texts} />
         ) : (
           <article>
             <div className="text-sm text-muted-foreground">Lekcja {lesson + 1} z {m.lessons.length}</div>
@@ -174,8 +179,10 @@ function Checklist({ groups }: { groups: { title: string; items: string[] }[] })
   );
 }
 
-function KeyQuestion({ m, done }: { m: any; done: boolean }) {
-  const k = keyQuestion(m);
+function KeyQuestion({ m, done, texts }: { m: any; done: boolean; texts?: Record<string, string> }) {
+  const word = texts?.[`unlock.module${m.n}.word`];
+  const stem = texts?.[`unlock.module${m.n}.stem`];
+  const k = keyQuestion(m, word, stem);
   const [pick, setPick] = useState<number | null>(null);
   const ok = pick === k.answer;
   const next = fallbackModules.find((x) => x.n === m.n + 1);

@@ -38,9 +38,11 @@ export function moduleText(m: any): string {
 /** Liczy wystąpienia słowa razem z odmianami (np. borelioza, boreliozy, boreliozą). */
 export const countStem = (text: string, stem: string) => text.toLowerCase().split(stem.toLowerCase()).length - 1;
 
-export function keyQuestion(m: Module) {
-  const k = keyWords[m.n]!;
-  const answer = countStem(moduleText(m), k.stem);
+export function keyQuestion(m: any, customWord?: string, customStem?: string) {
+  const fallback = keyWords[m.n] ?? { word: "kleszcz", stem: "kleszcz" };
+  const word = customWord && customWord.trim().length > 0 ? customWord.trim() : fallback.word;
+  const stem = customStem && customStem.trim().length > 0 ? customStem.trim() : fallback.stem;
+  const answer = countStem(moduleText(m), stem);
   const options = [...new Set([answer, answer + 2, Math.max(0, answer - 2), answer + 4])].sort((a, b) => a - b);
-  return { ...k, answer, options };
+  return { word, stem, answer, options };
 }

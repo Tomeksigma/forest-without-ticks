@@ -15,7 +15,7 @@ export const Route = createFileRoute("/konkurs")({
   loader: async () => {
     try {
       const res = await getSiteTexts();
-      return { texts: res.texts };
+      return { texts: res.texts || {} };
     } catch {
       return { texts: {} };
     }
@@ -39,6 +39,13 @@ function KonkursPage() {
   const privacyText = texts["klauzula_rodo.text"] || defaultPrivacyText;
   const protectionText = texts["standardy_ochrony.text"] || defaultProtectionText;
 
+  // Linki do pobrania – edytowalne z panelu admina (z domyślnym fallbackiem do plików wbudowanych)
+  const docUrl = (texts["konkurs.doc_url"] && texts["konkurs.doc_url"].trim()) || doc.url;
+  const adultFormUrl = (texts["konkurs.adult_form_url"] && texts["konkurs.adult_form_url"].trim()) || adultForm.url;
+  const minorFormUrl = (texts["konkurs.minor_form_url"] && texts["konkurs.minor_form_url"].trim()) || minorForm.url;
+  const privacyClauseUrl = (texts["konkurs.privacy_clause_url"] && texts["konkurs.privacy_clause_url"].trim()) || privacyClause.url;
+  const childProtectionUrl = (texts["konkurs.child_protection_url"] && texts["konkurs.child_protection_url"].trim()) || childProtection.url;
+
   return (
     <main>
       <PageHero kicker="Ogólnopolski konkurs edukacyjny" title="Konkurs na projekt muralu">
@@ -55,11 +62,11 @@ function KonkursPage() {
           <p className="text-sm text-muted-foreground">Regulamin zaktualizowany — obowiązuje od 6 listopada 2026 r.</p>
           <Notice tone="warn">Najnowszy regulamin podaje ogólny próg 70% w quizie końcowym. Na stronie nadal wymagane jest minimum 70% w każdej z trzech części; formularz dla niepełnoletnich mówi o „każdym quizie”. Zapisy wymagają ujednolicenia przez organizatorkę. Standardy Ochrony Małoletnich zawierają nieuzupełnioną datę obowiązywania w § 15. Oryginalne pliki i ich treści zachowano bez zmian.</Notice>
           <ul className="space-y-2">
-            <li><a href={doc.url} download className="font-medium text-primary underline">Regulamin Konkursu (DOCX)</a></li>
-            <li><a href={adultForm.url} download className="font-medium text-primary underline">Formularz zgłoszeniowy – uczestnik pełnoletni (DOCX)</a></li>
-            <li><a href={minorForm.url} download className="font-medium text-primary underline">Formularz zgłoszeniowy – uczestnik niepełnoletni (ze zgodą przedstawiciela ustawowego) (DOCX)</a></li>
-            <li><a href={privacyClause.url} download className="font-medium text-primary underline">Klauzula informacyjna RODO (DOCX)</a></li>
-            <li><a href={childProtection.url} download className="font-medium text-primary underline">Standardy Ochrony Małoletnich – z wersją skróconą dla uczniów (DOCX)</a></li>
+            <li><a href={docUrl} download target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline">Regulamin Konkursu (DOCX)</a></li>
+            <li><a href={adultFormUrl} download target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline">Formularz zgłoszeniowy – uczestnik pełnoletni (DOCX)</a></li>
+            <li><a href={minorFormUrl} download target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline">Formularz zgłoszeniowy – uczestnik niepełnoletni (ze zgodą przedstawiciela ustawowego) (DOCX)</a></li>
+            <li><a href={privacyClauseUrl} download target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline">Klauzula informacyjna RODO (DOCX)</a></li>
+            <li><a href={childProtectionUrl} download target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline">Standardy Ochrony Małoletnich – z wersją skróconą dla uczniów (DOCX)</a></li>
             <li><Link to="/polityka-prywatnosci" className="font-medium text-primary underline">Aktualna polityka prywatności serwisu i pliki cookies</Link></li>
           </ul>
           <Link to="/strefa-edukacji" className="inline-block rounded-full border px-5 py-2">Przejdź do Strefy Edukacji</Link>

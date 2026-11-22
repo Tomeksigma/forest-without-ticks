@@ -478,11 +478,11 @@ function InteractiveChecklist({
   );
 }
 
-/** Render inline Markdown formatting (bold, italic, links, inline code) */
+/** Render inline Markdown formatting (bold, italic, links, inline code, raw URLs) */
 function renderInline(text: string): React.ReactNode {
   if (!text) return null;
 
-  const regex = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|\*[^*]+\*|_[^_]+_|`[^`]+`)/g;
+  const regex = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|\*[^*]+\*|_[^_]+_|`[^`]+`|https?:\/\/[^\s<]+[^<.,:;"')\]\s])/g;
   const parts = text.split(regex);
 
   return parts.map((part, i) => {
@@ -515,6 +515,20 @@ function renderInline(text: string): React.ReactNode {
           className="text-primary underline hover:text-primary/80 transition-colors"
         >
           {linkMatch[1]}
+        </a>
+      );
+    }
+
+    if (part.startsWith("http://") || part.startsWith("https://")) {
+      return (
+        <a
+          key={i}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline hover:text-primary/80 transition-colors break-all"
+        >
+          {part}
         </a>
       );
     }
