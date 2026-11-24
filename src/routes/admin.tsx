@@ -352,6 +352,8 @@ function TextsEditor({
     { key: "konkurs.minor_form_url", label: "Konkurs – URL: Formularz niepełnoletni", defaultVal: "" },
     { key: "konkurs.privacy_clause_url", label: "Konkurs – URL: Klauzula RODO", defaultVal: "" },
     { key: "konkurs.child_protection_url", label: "Konkurs – URL: Standardy Ochrony", defaultVal: "" },
+      { key: "polityka.doc_url", label: "Polityka prywatności – URL: Plik PDF", defaultVal: "" },
+      { key: "regulamin.doc_url", label: "Regulamin serwisu – URL: Plik PDF", defaultVal: "" },
     // --- Pytania odblokowujące moduły ---
     { key: "unlock.module1.word", label: "Pyt. obl. Moduł I – słowo kluczowe (np. borelioza)", defaultVal: "borelioza" },
     { key: "unlock.module1.stem", label: "Pyt. obl. Moduł I – rdzeń słowa (np. borelioz)", defaultVal: "borelioz" },
