@@ -6,13 +6,17 @@ export function VisitCounter() {
   useEffect(() => {
     const counted = sessionStorage.getItem("visit-counted");
     (async () => {
-      if (!counted) {
-        sessionStorage.setItem("visit-counted", "1");
-        const { data } = await supabase.rpc("increment_visits");
-        if (typeof data === "number") return setN(data);
+      try {
+        if (!counted) {
+          sessionStorage.setItem("visit-counted", "1");
+          const { data } = await supabase.rpc("increment_visits");
+          if (typeof data === "number") return setN(data);
+        }
+        const { data } = await supabase.from("site_counter").select("visits").eq("id", 1).maybeSingle();
+        if (data) setN(Number(data.visits));
+      } catch (err) {
+        console.error("Visit counter error:", err);
       }
-      const { data } = await supabase.from("site_counter").select("visits").eq("id", 1).maybeSingle();
-      if (data) setN(Number(data.visits));
     })();
   }, []);
   return (
