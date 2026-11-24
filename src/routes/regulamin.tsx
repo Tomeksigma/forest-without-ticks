@@ -37,7 +37,6 @@ function RegulaminPage() {
     <main>
       <PageHero kicker="Dokumenty" title="Regulamin serwisu" />
       <div className="mx-auto max-w-3xl px-6 py-10">
-        <div className="mb-6"><Notice tone="warn">Przesłany oryginał wskazuje inny adres strony oraz Netlify i Sanity CMS. Te informacje wymagają dostosowania przed publikacją.</Notice></div>
         <a href={docUrl} download target="_blank" rel="noopener noreferrer" className="mb-8 inline-block rounded-full bg-primary px-5 py-2 text-primary-foreground">Pobierz (PDF)</a>
         <section className="mb-8 space-y-3 border-b pb-6">
           <h2 className="text-xl font-semibold">Dokumentacja konkursowa</h2>
