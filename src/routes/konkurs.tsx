@@ -63,7 +63,6 @@ function KonkursPage() {
           </Notice>
           <h2 className="text-2xl font-semibold">Dokumenty do pobrania</h2>
           <p className="text-sm text-muted-foreground">Regulamin zaktualizowany — obowiązuje od 6 listopada 2026 r.</p>
-          <Notice tone="warn">Najnowszy regulamin podaje ogólny próg 70% w quizie końcowym. Na stronie nadal wymagane jest minimum 70% w każdej z trzech części; formularz dla niepełnoletnich mówi o „każdym quizie”. Zapisy wymagają ujednolicenia przez organizatorkę. Standardy Ochrony Małoletnich zawierają nieuzupełnioną datę obowiązywania w § 15. Oryginalne pliki i ich treści zachowano bez zmian.</Notice>
           <ul className="space-y-2">
             <li><a href={docUrl} download target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline">Regulamin Konkursu (PDF)</a></li>
             <li><a href={adultFormUrl} download target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline">Formularz zgłoszeniowy – uczestnik pełnoletni (DOCX)</a></li>
