@@ -27,8 +27,12 @@ export function SiteHeader() {
         <div className="mx-auto max-w-6xl px-4 py-4">
           <p className="mb-3 text-center text-sm font-semibold text-primary">Patronaty honorowe</p>
           <div className="mx-auto grid max-w-4xl grid-cols-2 items-center justify-center gap-5 sm:gap-10">
-            <img src={honoraryForest.url} alt="Lasy Państwowe — patronat honorowy Dyrektora Generalnego Lasów Państwowych" width={2400} height={600} className="aspect-[4/1] w-full object-contain" />
-            <img src={honoraryHealth.url} alt="Główny Inspektorat Sanitarny — patronat honorowy" width={2400} height={648} className="aspect-[4/1] w-full object-contain" />
+            <div className="flex items-center justify-center">
+              <img src={honoraryForest.url} alt="Lasy Państwowe — patronat honorowy Dyrektora Generalnego Lasów Państwowych" width={2400} height={600} className="aspect-[4/1] w-[65%] max-w-[270px] object-contain" />
+            </div>
+            <div className="flex items-center justify-center">
+              <img src={honoraryHealth.url} alt="Główny Inspektorat Sanitarny — patronat honorowy" width={2400} height={648} className="aspect-[4/1] w-full object-contain" />
+            </div>
           </div>
         </div>
       </section>
