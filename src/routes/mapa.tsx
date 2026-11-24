@@ -120,7 +120,7 @@ function MapPage() {
             ) : (
               <dl className="mt-4 grid grid-cols-2 gap-4">
                 <div className="rounded-lg bg-secondary p-4"><dt className="text-xs text-muted-foreground">Zachorowania</dt><dd className="text-2xl font-semibold">{fmt(cur ? cur.cases : total)}</dd></div>
-                <div className="rounded-lg bg-secondary p-4"><dt className="text-xs text-muted-foreground">Zapadalność /100 tys.</dt><dd className="text-2xl font-semibold">{cur ? fmt(cur.incidence, 1) : "—"}</dd></div>
+                <div className="rounded-lg bg-secondary p-4"><dt className="text-xs text-muted-foreground">Zapadalność /100 tys.</dt><dd className="text-2xl font-semibold">{cur ? fmt(cur.incidence, 1) : "79,5"}</dd></div>
                 <div className="col-span-2 text-xs text-muted-foreground">Rok: {stats.year} · Źródło: <a className="underline" href={stats.sourceUrl} target="_blank" rel="noreferrer">{stats.source}</a></div>
               </dl>
             )}
