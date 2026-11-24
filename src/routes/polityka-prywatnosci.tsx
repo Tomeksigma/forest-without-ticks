@@ -40,7 +40,6 @@ function PolitykaPage() {
       <PageHero kicker="Dokumenty" title="Polityka prywatności" />
       <div className="mx-auto max-w-3xl px-6 py-10">
         <p className="mb-4 text-sm text-muted-foreground">Aktualizacja dokumentu — obowiązuje od 6 listopada 2026 r.</p>
-        <div className="mb-6"><Notice tone="warn">Najnowszy plik przesłany jako „Klauzula informacyjna RODO” zawiera politykę prywatności serwisu. Dokument nadal wskazuje adres w Netlify oraz usługi Netlify i Sanity CMS, których ta strona nie używa, i zawiera miejsca do uzupełnienia dotyczące transferów danych oraz cookies. Wymaga uzgodnienia z rzeczywistymi usługami przed publikacją. Oryginał zachowano bez zmian. Odrębna klauzula konkursowa pozostaje dostępna poniżej.</Notice></div>
         <a href={docUrl} download target="_blank" rel="noopener noreferrer" className="mb-8 inline-block rounded-full bg-primary px-5 py-2 text-primary-foreground">Pobierz (PDF)</a>
         <section className="mb-8 space-y-3 border-b pb-6">
           <h2 className="text-xl font-semibold">Dane uczestników konkursu</h2>
