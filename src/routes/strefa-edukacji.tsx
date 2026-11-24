@@ -53,7 +53,7 @@ function Index() {
 
       <section className="mx-auto max-w-5xl px-6 py-16">
         <div className="grid gap-6 md:grid-cols-2">
-          {[["3", "moduły praktycznej wiedzy"], ["70%", "w każdej części quizu końcowego, by odebrać certyfikat"]].map(([a, b]) => (
+          {[["3", "moduły praktycznej wiedzy"], ["70%", "Aby odebrać certyfikat, musisz uzyskać minimum 70% poprawnych odpowiedzi w każdej z trzech części quizu końcowego"]].map(([a, b]) => (
             <div key={a} className="border-l-2 border-accent pl-4">
               <div className="text-4xl font-semibold text-primary" style={{ fontFamily: "var(--font-display)" }}>{a}</div>
               <div className="text-muted-foreground">{b}</div>
