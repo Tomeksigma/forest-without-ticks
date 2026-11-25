@@ -584,3 +584,53 @@ export const deleteGalleryPhoto = createServerFn({ method: "POST" })
     if (error) throw new Error(error.message);
     return { ok: true };
   });
+
+export type StorageImageItem = {
+  folder: string;
+  name: string;
+  path: string;
+  publicUrl: string;
+  createdAt: string;
+};
+
+/** List uploaded image files across folders in Supabase Storage `site-assets` bucket */
+export const listStorageImages = createServerFn({ method: "POST" })
+  .validator((d: { adminPassword: string }) => d)
+  .handler(async ({ data }) => {
+    if (!verifyAdmin(data.adminPassword)) throw new Error("Unauthorized");
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const folders = ["hero", "modules", "uploads", "gallery", "logos"];
+    const images: StorageImageItem[] = [];
+
+    await Promise.all(
+      folders.map(async (folder) => {
+        const { data: files, error } = await supabaseAdmin.storage
+          .from("site-assets")
+          .list(folder, { limit: 100, sortBy: { column: "created_at", order: "desc" } });
+        if (error || !files) return;
+
+        for (const f of files) {
+          if (!f.name || f.name === ".emptyFolderPlaceholder") continue;
+          const mime = String(f.metadata?.mimetype ?? "");
+          const isImg =
+            /\.(png|jpe?g|webp|gif|svg|avif)$/i.test(f.name) ||
+            mime.startsWith("image/");
+          if (!isImg) continue;
+          const path = `${folder}/${f.name}`;
+          const { data: urlData } = supabaseAdmin.storage
+            .from("site-assets")
+            .getPublicUrl(path);
+          images.push({
+            folder,
+            name: f.name,
+            path,
+            publicUrl: urlData.publicUrl,
+            createdAt: f.created_at ?? "",
+          });
+        }
+      }),
+    );
+
+    images.sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
+    return { images };
+  });

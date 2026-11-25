@@ -17,11 +17,15 @@ import {
   saveSimulatorScenario,
   deleteSimulatorScenario,
   uploadImageToStorage,
+  listStorageImages,
   getGalleryPhotos,
   saveGalleryPhoto,
   deleteGalleryPhoto,
   type DbModule,
+  type StorageImageItem,
 } from "@/lib/admin.functions";
+import defaultHero from "@/assets/las-hero.jpg";
+import { moduleImages } from "@/lib/images";
 import { MarkdownView } from "@/components/markdown-view";
 import defaultOlivia from "@/content/olivia.txt?raw";
 import defaultKonkurs from "@/content/konkurs.txt?raw";
@@ -312,6 +316,7 @@ function AdminPage() {
 
         {activeTab === "upload" && (
           <StorageUploader
+            texts={data.texts}
             adminPassword={authPassword}
             onSaved={(msg) => {
               showStatus(msg);
@@ -1478,20 +1483,106 @@ function GalleryEditor({
 /* ──────────────────────────────────────────────────────────────
    TAB 7: STORAGE & IMAGE UPLOADER
    ────────────────────────────────────────────────────────────── */
+const IMAGE_SLOTS = [
+  {
+    key: "homepage.hero_image",
+    shortLabel: "Tło strony",
+    label: "Tło główne (Strona główna i Strefa Edukacji)",
+    defaultUrl: defaultHero,
+  },
+  {
+    key: "module.1.image",
+    shortLabel: "Moduł 1",
+    label: "Okładka Modułu 1 (Poznaj zagrożenie)",
+    defaultUrl: moduleImages[1] ?? "",
+  },
+  {
+    key: "module.2.image",
+    shortLabel: "Moduł 2",
+    label: "Okładka Modułu 2 (Chroń siebie)",
+    defaultUrl: moduleImages[2] ?? "",
+  },
+  {
+    key: "module.3.image",
+    shortLabel: "Moduł 3",
+    label: "Okładka Modułu 3 (Reaguj właściwie)",
+    defaultUrl: moduleImages[3] ?? "",
+  },
+] as const;
+
 function StorageUploader({
+  texts,
   adminPassword,
   onSaved,
 }: {
+  texts: Record<string, string>;
   adminPassword: string;
   onSaved: (msg: string) => void;
 }) {
+  const slots = IMAGE_SLOTS;
+
   const [file, setFile] = useState<File | null>(null);
-  const [folder, setFolder] = useState("hero");
+  const [folder, setFolder] = useState("modules");
+  const [targetSlot, setTargetSlot] = useState<string>("");
   const [uploading, setUploading] = useState(false);
+  const [assigningKey, setAssigningKey] = useState<string | null>(null);
   const [lastUploadedUrl, setLastUploadedUrl] = useState<string | null>(null);
   const [caption, setCaption] = useState("");
   const [author, setAuthor] = useState("");
   const [school, setSchool] = useState("");
+
+  const [slotUrls, setSlotUrls] = useState<Record<string, string>>({});
+  const [storageImages, setStorageImages] = useState<StorageImageItem[]>([]);
+  const [loadingStorage, setLoadingStorage] = useState(false);
+  const [storageFilter, setStorageFilter] = useState<string>("all");
+
+  useEffect(() => {
+    const next: Record<string, string> = {};
+    for (const s of slots) {
+      next[s.key] = texts[s.key] ?? "";
+    }
+    setSlotUrls(next);
+  }, [texts]);
+
+  const loadStorageImages = async () => {
+    setLoadingStorage(true);
+    try {
+      const res = await listStorageImages({ data: { adminPassword } });
+      setStorageImages(res.images || []);
+    } catch (e) {
+      console.error("Failed to list storage images:", e);
+    } finally {
+      setLoadingStorage(false);
+    }
+  };
+
+  useEffect(() => {
+    void loadStorageImages();
+  }, [adminPassword]);
+
+  const assignImageToSlot = async (slotKey: string, url: string) => {
+    const slotMeta = slots.find((s) => s.key === slotKey);
+    setAssigningKey(slotKey);
+    try {
+      await saveSiteText({
+        data: {
+          key: slotKey,
+          value: url.trim(),
+          adminPassword,
+        },
+      });
+      setSlotUrls((prev) => ({ ...prev, [slotKey]: url.trim() }));
+      onSaved(
+        url.trim()
+          ? `Ustawiono nowe zdjęcie dla miejsca: ${slotMeta?.label || slotKey}!`
+          : `Przywrócono domyślne zdjęcie dla miejsca: ${slotMeta?.label || slotKey}.`,
+      );
+    } catch (e: any) {
+      alert("Błąd zapisu: " + e.message);
+    } finally {
+      setAssigningKey(null);
+    }
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -1504,7 +1595,6 @@ function StorageUploader({
     setUploading(true);
 
     try {
-      // Convert to base64
       const reader = new FileReader();
       const base64Promise = new Promise<string>((resolve, reject) => {
         reader.onload = () => {
@@ -1530,9 +1620,7 @@ function StorageUploader({
       });
 
       setLastUploadedUrl(res.publicUrl);
-      onSaved(`Pomyślnie przesłano plik: ${file.name}`);
 
-      // If uploaded to gallery folder, optionally add to gallery table
       if (folder === "gallery") {
         await saveGalleryPhoto({
           data: {
@@ -1545,7 +1633,13 @@ function StorageUploader({
           },
         });
         onSaved("Dodano nowe zdjęcie bezpośrednio do galerii prac!");
+      } else if (targetSlot) {
+        await assignImageToSlot(targetSlot, res.publicUrl);
+      } else {
+        onSaved(`Pomyślnie przesłano plik: ${file.name}. Wybierz poniżej miejsce na stronie.`);
       }
+
+      void loadStorageImages();
     } catch (e: any) {
       alert("Błąd przesyłania: " + e.message);
     } finally {
@@ -1553,122 +1647,296 @@ function StorageUploader({
     }
   };
 
-  const setAsHero = async () => {
-    if (!lastUploadedUrl) return;
-    try {
-      await saveSiteText({
-        data: {
-          key: "homepage.hero_image",
-          value: lastUploadedUrl,
-          adminPassword,
-        },
-      });
-      onSaved("Ustawiono jako nowe zdjęcie w tle strony głównej!");
-    } catch (e: any) {
-      alert("Błąd: " + e.message);
-    }
-  };
+  const filteredStorage = storageImages.filter(
+    (img) => storageFilter === "all" || img.folder === storageFilter,
+  );
 
   return (
-    <div className="max-w-2xl space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold">Przesyłanie zdjęć (Supabase Storage)</h2>
-        <p className="text-sm text-muted-foreground">
-          Prześlij nowe zdjęcia ze swojego komputera do magazynu w chmurze (magazyn `site-assets`).
-        </p>
-      </div>
-
-      <div className="rounded-xl border bg-card p-6 shadow-sm space-y-4">
+    <div className="space-y-10">
+      {/* 1. Uploader card */}
+      <div className="max-w-2xl space-y-6">
         <div>
-          <label className="block text-sm font-medium text-foreground">Wybierz plik z dysku</label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleFileChange}
-            className="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary-foreground hover:file:opacity-90"
-          />
+          <h2 className="text-2xl font-bold">Przesyłanie zdjęć (Supabase Storage)</h2>
+          <p className="text-sm text-muted-foreground">
+            Prześlij nowe zdjęcie z komputera do chmury i ustaw je jako tło strony albo okładkę wybranego modułu (1, 2 lub 3).
+          </p>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium text-foreground">Folder docelowy</label>
-          <select
-            value={folder}
-            onChange={(e) => setFolder(e.target.value)}
-            className="mt-1 w-full rounded-md border bg-background p-2.5 text-sm"
-          >
-            <option value="hero">hero (zdjęcie w tle strony głównej)</option>
-            <option value="modules">modules (okładki modułów)</option>
-            <option value="gallery">gallery (prace konkursowe na mural)</option>
-            <option value="logos">logos (loga i patronaty)</option>
-            <option value="uploads">uploads (ogólny)</option>
-          </select>
-        </div>
-
-        {folder === "gallery" && (
-          <div className="space-y-3 rounded-lg border bg-muted/40 p-3">
-            <p className="text-xs font-semibold text-primary">Informacje o pracy konkursowej:</p>
+        <div className="rounded-xl border bg-card p-6 shadow-sm space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-foreground">Wybierz plik z dysku</label>
             <input
-              type="text"
-              placeholder="Podpis pracy / tytuł muralu..."
-              value={caption}
-              onChange={(e) => setCaption(e.target.value)}
-              className="w-full rounded border bg-background p-2 text-xs"
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              className="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary-foreground hover:file:opacity-90"
             />
-            <div className="grid grid-cols-2 gap-2">
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label className="block text-sm font-medium text-foreground">Folder docelowy w magazynie</label>
+              <select
+                value={folder}
+                onChange={(e) => setFolder(e.target.value)}
+                className="mt-1 w-full rounded-md border bg-background p-2.5 text-sm"
+              >
+                <option value="modules">modules (okładki modułów)</option>
+                <option value="hero">hero (zdjęcie w tle strony)</option>
+                <option value="gallery">gallery (prace konkursowe na mural)</option>
+                <option value="logos">logos (loga i patronaty)</option>
+                <option value="uploads">uploads (ogólny)</option>
+              </select>
+            </div>
+
+            {folder !== "gallery" && (
+              <div>
+                <label className="block text-sm font-medium text-foreground">Gdzie ustawić od razu? (opcjonalnie)</label>
+                <select
+                  value={targetSlot}
+                  onChange={(e) => setTargetSlot(e.target.value)}
+                  className="mt-1 w-full rounded-md border bg-background p-2.5 text-sm"
+                >
+                  <option value="">Tylko prześlij (wybiorę za chwilę)</option>
+                  {slots.map((s) => (
+                    <option key={s.key} value={s.key}>
+                      {s.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+          </div>
+
+          {folder === "gallery" && (
+            <div className="space-y-3 rounded-lg border bg-muted/40 p-3">
+              <p className="text-xs font-semibold text-primary">Informacje o pracy konkursowej:</p>
               <input
                 type="text"
-                placeholder="Autor (imię lub pseudonim)..."
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
+                placeholder="Podpis pracy / tytuł muralu..."
+                value={caption}
+                onChange={(e) => setCaption(e.target.value)}
                 className="w-full rounded border bg-background p-2 text-xs"
               />
+              <div className="grid grid-cols-2 gap-2">
+                <input
+                  type="text"
+                  placeholder="Autor (imię lub pseudonim)..."
+                  value={author}
+                  onChange={(e) => setAuthor(e.target.value)}
+                  className="w-full rounded border bg-background p-2 text-xs"
+                />
+                <input
+                  type="text"
+                  placeholder="Szkoła / Technikum..."
+                  value={school}
+                  onChange={(e) => setSchool(e.target.value)}
+                  className="w-full rounded border bg-background p-2 text-xs"
+                />
+              </div>
+            </div>
+          )}
+
+          <button
+            type="button"
+            disabled={!file || uploading}
+            onClick={handleUpload}
+            className="w-full rounded-lg bg-primary py-3 font-medium text-primary-foreground hover:opacity-90 disabled:opacity-50"
+          >
+            {uploading ? "Przesyłanie do chmury..." : "Prześlij do magazynu"}
+          </button>
+        </div>
+
+        {lastUploadedUrl && (
+          <div className="rounded-xl border bg-success/10 p-5 space-y-4">
+            <p className="font-semibold text-sm text-success">✓ Zdjęcie zostało pomyślnie przesłane!</p>
+            <div className="aspect-video max-w-sm overflow-hidden rounded-lg border bg-background">
+              <img src={lastUploadedUrl} alt="Podgląd" className="h-full w-full object-cover" />
+            </div>
+            <div className="space-y-1">
+              <label className="text-xs text-muted-foreground">Publiczny link URL:</label>
               <input
                 type="text"
-                placeholder="Szkoła / Technikum..."
-                value={school}
-                onChange={(e) => setSchool(e.target.value)}
-                className="w-full rounded border bg-background p-2 text-xs"
+                readOnly
+                value={lastUploadedUrl}
+                className="w-full rounded border bg-background p-2 text-xs font-mono"
               />
+            </div>
+            <div className="space-y-2">
+              <p className="text-xs font-semibold text-foreground">Ustaw to zdjęcie w wybranym miejscu na stronie:</p>
+              <div className="flex flex-wrap gap-2">
+                {slots.map((s) => {
+                  const isActive = (texts[s.key] ?? "").trim() === lastUploadedUrl;
+                  return (
+                    <button
+                      key={s.key}
+                      type="button"
+                      disabled={assigningKey === s.key}
+                      onClick={() => assignImageToSlot(s.key, lastUploadedUrl)}
+                      className={`rounded-lg px-3 py-2 text-xs font-medium transition ${
+                        isActive
+                          ? "bg-success text-white"
+                          : "bg-primary text-primary-foreground hover:opacity-90"
+                      } disabled:opacity-50`}
+                    >
+                      {isActive ? `✓ Ustawiono: ${s.shortLabel}` : `Ustaw jako: ${s.shortLabel}`}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         )}
-
-        <button
-          type="button"
-          disabled={!file || uploading}
-          onClick={handleUpload}
-          className="w-full rounded-lg bg-primary py-3 font-medium text-primary-foreground hover:opacity-90 disabled:opacity-50"
-        >
-          {uploading ? "Przesyłanie do chmury..." : "Prześlij do magazynu"}
-        </button>
       </div>
 
-      {lastUploadedUrl && (
-        <div className="rounded-xl border bg-success/10 p-5 space-y-3">
-          <p className="font-semibold text-sm text-success">✓ Zdjęcie zostało pomyślnie przesłane!</p>
-          <div className="aspect-video max-w-sm overflow-hidden rounded-lg border bg-background">
-            <img src={lastUploadedUrl} alt="Podgląd" className="h-full w-full object-cover" />
+      {/* 2. Current 4 image places overview */}
+      <div className="space-y-4 border-t pt-8">
+        <div>
+          <h3 className="text-xl font-bold">Aktualne zdjęcia w 4 miejscach na stronie</h3>
+          <p className="text-sm text-muted-foreground">
+            Podgląd aktywnych zdjęć dla tła strony oraz okładek Modułu 1, 2 i 3. Możesz tu też wkleić własny link lub przywrócić zdjęcie domyślne.
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {slots.map((s) => {
+            const customUrl = (texts[s.key] ?? "").trim();
+            const activeSrc = customUrl || s.defaultUrl;
+            const draftVal = slotUrls[s.key] ?? "";
+            return (
+              <div key={s.key} className="rounded-xl border bg-card p-4 shadow-sm space-y-3">
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <h4 className="font-semibold text-foreground text-sm">{s.label}</h4>
+                    <span className="text-[11px] font-mono text-muted-foreground">{s.key}</span>
+                  </div>
+                  <span
+                    className={`shrink-0 rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
+                      customUrl
+                        ? "bg-success/15 text-success"
+                        : "bg-muted text-muted-foreground"
+                    }`}
+                  >
+                    {customUrl ? "Własne zdjęcie" : "Domyślne"}
+                  </span>
+                </div>
+
+                <div className="aspect-video overflow-hidden rounded-lg border bg-muted">
+                  <img src={activeSrc} alt={s.label} className="h-full w-full object-cover" />
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <input
+                    type="text"
+                    placeholder="Wklej URL zdjęcia (albo kliknij poniżej przy zdjęciu z chmury)..."
+                    value={draftVal}
+                    onChange={(e) => setSlotUrls((prev) => ({ ...prev, [s.key]: e.target.value }))}
+                    className="min-w-0 flex-1 rounded-md border bg-background px-2.5 py-1.5 text-xs font-mono"
+                  />
+                  <button
+                    type="button"
+                    disabled={assigningKey === s.key || draftVal.trim() === customUrl}
+                    onClick={() => assignImageToSlot(s.key, draftVal)}
+                    className="rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:opacity-90 disabled:opacity-40"
+                  >
+                    Zapisz
+                  </button>
+                  {customUrl && (
+                    <button
+                      type="button"
+                      disabled={assigningKey === s.key}
+                      onClick={() => assignImageToSlot(s.key, "")}
+                      className="rounded-md border px-3 py-1.5 text-xs hover:bg-muted disabled:opacity-40"
+                    >
+                      Przywróć domyślne
+                    </button>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* 3. Already uploaded storage images library */}
+      <div className="space-y-4 border-t pt-8">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h3 className="text-xl font-bold">Zdjęcia już przesłane do bazy (Supabase Storage)</h3>
+            <p className="text-sm text-muted-foreground">
+              Kliknij wybrany przycisk pod dowolnym przesłanym zdjęciem, aby od razu ustawić je w jednym z 4 miejsc.
+            </p>
           </div>
-          <div className="space-y-1">
-            <label className="text-xs text-muted-foreground">Publiczny link URL:</label>
-            <input
-              type="text"
-              readOnly
-              value={lastUploadedUrl}
-              className="w-full rounded border bg-background p-2 text-xs font-mono"
-            />
-          </div>
-          {folder === "hero" && (
+          <div className="flex items-center gap-2">
+            <select
+              value={storageFilter}
+              onChange={(e) => setStorageFilter(e.target.value)}
+              className="rounded-md border bg-background px-3 py-1.5 text-xs"
+            >
+              <option value="all">Wszystkie foldery</option>
+              <option value="modules">modules</option>
+              <option value="hero">hero</option>
+              <option value="uploads">uploads</option>
+              <option value="gallery">gallery</option>
+              <option value="logos">logos</option>
+            </select>
             <button
               type="button"
-              onClick={setAsHero}
-              className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:opacity-90"
+              onClick={() => void loadStorageImages()}
+              disabled={loadingStorage}
+              className="rounded-md border px-3 py-1.5 text-xs hover:bg-muted disabled:opacity-50"
             >
-              Ustaw to zdjęcie jako tło strony głównej (Hero)
+              {loadingStorage ? "Ładowanie..." : "↻ Odśwież listę"}
             </button>
-          )}
+          </div>
         </div>
-      )}
+
+        {loadingStorage && storageImages.length === 0 ? (
+          <p className="text-sm text-muted-foreground">Wczytywanie zdjęć z magazynu...</p>
+        ) : filteredStorage.length === 0 ? (
+          <p className="rounded-xl border border-dashed p-6 text-center text-sm text-muted-foreground">
+            Brak przesłanych zdjęć w wybranym folderze.
+          </p>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredStorage.map((img) => (
+              <div key={img.path} className="flex flex-col rounded-xl border bg-card p-3 shadow-sm">
+                <div className="aspect-video overflow-hidden rounded-lg bg-muted">
+                  <img src={img.publicUrl} alt={img.name} className="h-full w-full object-cover" loading="lazy" />
+                </div>
+                <div className="mt-2 min-w-0">
+                  <span className="inline-block rounded bg-secondary px-1.5 py-0.5 text-[10px] font-medium text-primary">
+                    {img.folder}
+                  </span>
+                  <p className="mt-1 truncate text-xs font-mono text-muted-foreground" title={img.name}>
+                    {img.name}
+                  </p>
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-1.5">
+                  {slots.map((s) => {
+                    const isActive = (texts[s.key] ?? "").trim() === img.publicUrl;
+                    return (
+                      <button
+                        key={s.key}
+                        type="button"
+                        disabled={assigningKey === s.key}
+                        onClick={() => assignImageToSlot(s.key, img.publicUrl)}
+                        className={`rounded border px-2 py-1.5 text-[11px] font-medium transition ${
+                          isActive
+                            ? "border-primary bg-primary text-primary-foreground"
+                            : "bg-background hover:bg-muted"
+                        } disabled:opacity-50`}
+                      >
+                        {isActive ? `✓ ${s.shortLabel}` : s.shortLabel}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

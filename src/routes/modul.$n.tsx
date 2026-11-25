@@ -59,7 +59,7 @@ function ModulePage() {
   return (
     <main>
       <header className="relative h-64 overflow-hidden bg-forest text-forest-foreground">
-        <img src={moduleImages[n]} alt={m.title} width={1200} height={800} className="absolute inset-0 h-full w-full object-cover opacity-50" />
+        <img src={texts?.[`module.${n}.image`]?.trim() || moduleImages[n]} alt={m.title} width={1200} height={800} className="absolute inset-0 h-full w-full object-cover opacity-50" />
         <div className="relative mx-auto flex h-full max-w-5xl flex-col justify-end px-6 pb-8">
           <Link to="/strefa-edukacji" className="mb-auto mt-6 text-sm opacity-80 hover:opacity-100">← Strefa Edukacji</Link>
           <div className="text-sm uppercase tracking-widest text-accent">Moduł {m.roman}</div>

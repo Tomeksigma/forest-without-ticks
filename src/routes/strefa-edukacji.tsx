@@ -4,15 +4,21 @@ import { modules as fallbackModules } from "@/lib/content";
 import { moduleImages } from "@/lib/images";
 import { isUnlocked, useProgress } from "@/lib/progress";
 import { HealthNotice, ProgressNotice } from "@/components/notices";
-import { getModulesData } from "@/lib/admin.functions";
+import { getModulesData, getSiteTexts } from "@/lib/admin.functions";
 
 export const Route = createFileRoute("/strefa-edukacji")({
   loader: async () => {
     try {
-      const res = await getModulesData();
-      return { modules: res?.modules?.length ? res.modules : fallbackModules };
+      const [res, textsRes] = await Promise.all([
+        getModulesData(),
+        getSiteTexts(),
+      ]);
+      return {
+        modules: res?.modules?.length ? res.modules : fallbackModules,
+        texts: textsRes?.texts || ({} as Record<string, string>),
+      };
     } catch {
-      return { modules: fallbackModules };
+      return { modules: fallbackModules, texts: {} as Record<string, string> };
     }
   },
   head: () => ({
@@ -27,13 +33,14 @@ export const Route = createFileRoute("/strefa-edukacji")({
 });
 
 function Index() {
-  const { modules } = Route.useLoaderData();
+  const { modules, texts } = Route.useLoaderData();
   const { progress } = useProgress();
   const done = modules.filter((m) => progress.passed[m.n]).length;
+  const heroImage = texts["homepage.hero_image"]?.trim() || hero;
   return (
     <main>
       <section className="relative isolate min-h-[85vh] overflow-hidden bg-forest text-forest-foreground">
-        <img src={hero} alt="Las o poranku" width={1600} height={912} className="absolute inset-0 -z-10 h-full w-full object-cover opacity-60" />
+        <img src={heroImage} alt="Las o poranku" width={1600} height={912} className="absolute inset-0 -z-10 h-full w-full object-cover opacity-60" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-forest via-forest/60 to-transparent" />
         <div className="mx-auto flex min-h-[85vh] max-w-5xl flex-col justify-end px-6 pb-20">
           <p className="mb-4 text-sm uppercase tracking-[0.25em] text-accent">Strefa Edukacji · Praktyki leśne</p>
@@ -74,7 +81,7 @@ function Index() {
             const passed = progress.passed[m.n];
             const card = (
               <article className={`grid overflow-hidden rounded-xl border bg-card md:grid-cols-[2fr_3fr] ${open ? "transition hover:shadow-lg" : "opacity-60"}`}>
-                <img src={moduleImages[m.n]} alt={m.title} width={1200} height={800} loading="lazy" className="h-56 w-full object-cover md:h-full" />
+                <img src={texts[`module.${m.n}.image`]?.trim() || moduleImages[m.n]} alt={m.title} width={1200} height={800} loading="lazy" className="h-56 w-full object-cover md:h-full" />
                 <div className="p-6 md:p-8">
                   <div className="text-sm uppercase tracking-widest text-accent-foreground/70">Moduł {m.roman}</div>
                   <h3 className="mt-1 text-3xl font-semibold">{m.title}</h3>
