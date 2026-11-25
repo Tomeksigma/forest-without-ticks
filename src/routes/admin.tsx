@@ -1684,8 +1684,6 @@ function StorageUploader({
                 <option value="modules">modules (okładki modułów)</option>
                 <option value="hero">hero (zdjęcie w tle strony)</option>
                 <option value="gallery">gallery (prace konkursowe na mural)</option>
-                <option value="logos">logos (loga i patronaty)</option>
-                <option value="uploads">uploads (ogólny)</option>
               </select>
             </div>
 
@@ -1876,9 +1874,7 @@ function StorageUploader({
               <option value="all">Wszystkie foldery</option>
               <option value="modules">modules</option>
               <option value="hero">hero</option>
-              <option value="uploads">uploads</option>
               <option value="gallery">gallery</option>
-              <option value="logos">logos</option>
             </select>
             <button
               type="button"
