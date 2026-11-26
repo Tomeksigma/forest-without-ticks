@@ -70,7 +70,7 @@ function Cert() {
             </div>
           );
         })}
-        <div className="absolute left-[37%] w-[13.4%] text-center font-medium" style={{ top: "71.5%", fontSize: "1.5cqw", color: "#5a3416" }}>
+        <div className="absolute left-[41.6%] flex w-[8.8%] justify-center whitespace-nowrap font-medium" style={{ top: "71.3%", fontSize: "1.5cqw", color: "#5a3416" }}>
           {date}
         </div>
       </div>
